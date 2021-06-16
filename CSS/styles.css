@@ -1,0 +1,12 @@
+body {
+    background-image: url(../Images/fondo.jpg);
+}
+
+h1 {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    padding: 5px;
+}
