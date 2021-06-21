@@ -15,14 +15,19 @@ const usuarioGlobalBank = {
         this.apellido = apellido;
         this.clave = clave;        
     }       
-};
+};*/
 
-const baseClientes = [];      *--->Base de clientes para ser utilizado luego.<---*
+const baseClientes = [
+    {nombre: "Jorge", apellido: "Perez", clave: 1234},
+    {nombre: "Carla", apellido: "Santoro", clave: 6789},
+    {nombre: "Juan Carlos", apellido: "Batman", clave: 5678},
+];      
 
-const cliente1 = baseClientes.push(new cliente("Jorge", "Camaleon", 5678));
-const cliente2 = baseClientes.push(new cliente("Juan Carlos", "Batman", 1234));
-const cliente3 = baseClientes.push(new cliente("Pepe", "De Santis", 0909)); */
+//const cliente1 = baseClientes.push(new cliente("Jorge", "Camaleon", 5678));
+//const cliente2 = baseClientes.push(new cliente("Juan Carlos", "Batman", 1234));
+//const cliente3 = baseClientes.push(new cliente("Pepe", "De Santis", 0909)); 
 
+const validacion = baseClientes.find((usuario) => usuario.nombre == "Jorge");
 
 instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
 
@@ -71,14 +76,7 @@ while(ingresoUsuario == null || ingresoClave == null){
 
 mostrarInstrucciones();
 
-function Retiro() {
-    retiroDinero = prompt("Ingrese el monto a retirar. Recuerde que nuestros cajeros solo permiten el retiro de cifras que sean multiplos de 100 (es decir, que terminen en 00). Monto mínimo de extracción: $100");
-    while(retiroDinero == null || retiroDinero < 100){
-        alert("Monto no ingresado o incorrecto");
-        retiroDinero = prompt("Ingrese el monto a retirar. Recuerde que nuestros cajeros solo permiten el retiro de cifras que sean multiplos de 100 (es decir, que terminen en 00). Monto mínimo de extracción: $100");
-    }
-    if(retiroDinero % 100 == 0) {    
-    function tipoBillete() {
+function tipoBillete() {
     cambioDinero = prompt("Indique con numeros que tipos de billete desea recibir:  $100 , $200 , $500 o $1000");   
     if(retiroDinero % cambioDinero == 0){
         switch (cambioDinero) {
@@ -105,7 +103,14 @@ function Retiro() {
     };           
   
    }
-   tipoBillete();
+function Retiro() {
+    retiroDinero = prompt("Ingrese el monto a retirar. Recuerde que nuestros cajeros solo permiten el retiro de cifras que sean multiplos de 100 (es decir, que terminen en 00). Monto mínimo de extracción: $100");
+    while(retiroDinero == null || retiroDinero < 100){
+        alert("Monto no ingresado o incorrecto");
+        retiroDinero = prompt("Ingrese el monto a retirar. Recuerde que nuestros cajeros solo permiten el retiro de cifras que sean multiplos de 100 (es decir, que terminen en 00). Monto mínimo de extracción: $100");
+    }
+    if(retiroDinero % 100 == 0) {    
+    tipoBillete();
   }
     else {
         while(retiroDinero % 100 != 0) {
@@ -115,6 +120,5 @@ function Retiro() {
     }
   
 }
-
 
 Retiro();
