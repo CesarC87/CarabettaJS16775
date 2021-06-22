@@ -1,12 +1,27 @@
 body {
-    background-image: url(../Images/fondo.jpg);
-}
+  background-image: url(../Images/fondo.jpg);
+  margin: 0; }
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #2f8e62; }
+  .navbar a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Benne', serif;
+    font-size: 1.2rem; }
+    .navbar a:hover {
+      color: #9dafcb; }
 
 h1 {
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    background-color: blanchedalmond;
-    border-radius: 10px;
-    padding: 5px;
-}
+  text-align: center;
+  background-color: #104146;
+  width: max-content;
+  border-radius: 10px;
+  padding: 1%;
+  color: #ffffff;
+  display: block;
+  margin: 20% auto;
+  font-family: 'Cabin', sans-serif; }

@@ -1,0 +1,32 @@
+body {
+    background-image: url(../Images/fondo.jpg);
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #2f8e62;
+    a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-family: 'Benne', serif;
+        font-size: 1.2rem;
+        &:hover {
+            color: darken($color: #e3e8f0, $amount: 21);
+        }
+    }
+}
+
+h1 {
+    text-align: center;
+    background-color: #104146;
+    width: max-content;
+    border-radius: 10px;
+    padding: 1%;
+    color: #ffffff;
+    display: block;
+    margin: 20% auto;
+    font-family: 'Cabin', sans-serif;
+}

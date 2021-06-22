@@ -31,7 +31,7 @@ const validacion = baseClientes.find((usuario) => usuario.nombre == "Jorge");
 
 instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
 
-
+/*
 function validacionUsuario() {
     ingresoUsuario = prompt("Bienvenido a la red GlobalBank! por favor, ingrese su usuario (Los caracteres en mayúscula pueden influir en el ingreso)");
     while(ingresoUsuario != null && ingresoUsuario != usuarioGlobalBank.nombre) {
@@ -122,3 +122,4 @@ function Retiro() {
 }
 
 Retiro();
+*/
