@@ -2,6 +2,8 @@ let claveUsuario;
 let ingresoClave;
 let instructivo;
 let retiroDinero;
+let validarUsuario = document.getElementById("usuario");
+let validarClave = document.getElementById("clave");
 
 const usuarioGlobalBank = {    
     nombre: "Juan Carlos",
@@ -29,9 +31,12 @@ const baseClientes = [
 
 const validacion = baseClientes.find((usuario) => usuario.nombre == "Jorge");
 
+
+
+
 instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
 
-/*
+
 function validacionUsuario() {
     ingresoUsuario = prompt("Bienvenido a la red GlobalBank! por favor, ingrese su usuario (Los caracteres en mayúscula pueden influir en el ingreso)");
     while(ingresoUsuario != null && ingresoUsuario != usuarioGlobalBank.nombre) {
@@ -74,7 +79,7 @@ while(ingresoUsuario == null || ingresoClave == null){
     break;
 }
 
-mostrarInstrucciones();
+//mostrarInstrucciones();
 
 function tipoBillete() {
     cambioDinero = prompt("Indique con numeros que tipos de billete desea recibir:  $100 , $200 , $500 o $1000");   
@@ -122,4 +127,14 @@ function Retiro() {
 }
 
 Retiro();
-*/
+
+
+
+const datosDeExtraccion = {
+		usuario: usuarioGlobalBank.nombre,
+        extraccion: retiroDinero        
+}
+
+function datos() {
+  document.getElementById("boton").innerHTML = `Usuario: ${usuarioGlobalBank.nombre} \n, Extracción $${retiroDinero}`;
+}
