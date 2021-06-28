@@ -69,10 +69,12 @@ h1 {
   background-color: #42db61;
   text-align: center;
   color: white;
-  border-radius: 60px;
-  padding: 5px;
-  font-size: 1.5rem;
-  font-family: 'Cabin', sans-serif; }
+  border-radius: 20px;
+  padding: 0 10px 0 10px;
+  margin: 10% auto;
+  font-family: 'Cabin', sans-serif;
+  height: max-content;
+  width: max-content; }
 
 #link {
   text-align: center;
