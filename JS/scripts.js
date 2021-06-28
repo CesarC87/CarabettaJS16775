@@ -3,6 +3,8 @@ let ingresoClave;
 let instructivo;
 let retiroDinero;
 let detenerBucle = false; 
+let ingresoUsuario = document.getElementById("usuario");
+let validarClave = document.getElementById("clave");
 
 
 class cliente {
@@ -38,21 +40,19 @@ const baseClientes = [
  
 
  function validacionUsuario() {
-    let ingresoUsuario = document.getElementById("usuario").value;
-    let validarClave = document.getElementById("clave").value;
-
-    while((ingresoUsuario != null) && (validarClave != null) && (!detenerBucle)) {
+    
+    while((ingresoUsuario.value != null) && (validarClave.value != null) && (!detenerBucle)) {
      for (let i = 0; i < baseClientes.length; i++) {
-         if((ingresoUsuario == baseClientes[i].nombre) && (validarClave == baseClientes[i].clave) ){
+         if((ingresoUsuario.value == baseClientes[i].nombre) && (validarClave.value == baseClientes[i].clave) ){
              detenerBucle = true;
          }
      }
 
      if (detenerBucle) {
-         document.getElementById("bienvenidaUsuario").innerHTML = `<p>Bienvenido/a ${ingresoUsuario}!</p>`;
+         document.getElementById("bienvenidaUsuario").innerHTML = `<p>Bienvenido/a ${ingresoUsuario.value}!</p>`;
          document.getElementById("link").innerHTML = `Extracciones`;
      } else {
-         alert("Usuario o clave incorrecta");         
+         document.getElementById("error").innerHTML = "Usuario o clave incorrecta";         
          break;
      }
  }
