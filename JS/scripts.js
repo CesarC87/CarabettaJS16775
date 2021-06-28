@@ -2,56 +2,80 @@ let claveUsuario;
 let ingresoClave;
 let instructivo;
 let retiroDinero;
-let validarUsuario = document.getElementById("usuario");
-let validarClave = document.getElementById("clave");
+let detenerBucle = false; 
 
-const usuarioGlobalBank = {    
-    nombre: "Juan Carlos",
-    apellido: "Batman",
-    clave: 1234    
-};
 
-/*class cliente {
+class cliente {
     usuario(nombre, apellido, clave) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.clave = clave;        
     }       
-};*/
+};
 
 const baseClientes = [
     {nombre: "Jorge", apellido: "Perez", clave: 1234},
     {nombre: "Carla", apellido: "Santoro", clave: 6789},
-    {nombre: "Juan Carlos", apellido: "Batman", clave: 5678},
+    {nombre: "Juan", apellido: "Batman", clave: 5678},
 ];      
 
 //const cliente1 = baseClientes.push(new cliente("Jorge", "Camaleon", 5678));
 //const cliente2 = baseClientes.push(new cliente("Juan Carlos", "Batman", 1234));
 //const cliente3 = baseClientes.push(new cliente("Pepe", "De Santis", 0909)); 
 
-const validacion = baseClientes.find((usuario) => usuario.nombre == "Jorge");
+//const validacion = baseClientes.find((usuario) => usuario.nombre == "Jorge");
+
+//console.log(validacion);
 
 
 
+ console.log(!detenerBucle);
 
-instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
+ document.getElementById("usuario").value = "";
+ document.getElementById("clave").value = "";
+ document.getElementById("botonValidacion").addEventListener("click", validacionUsuario);
 
+ 
+
+ function validacionUsuario() {
+    let ingresoUsuario = document.getElementById("usuario").value;
+    let validarClave = document.getElementById("clave").value;
+
+    while((ingresoUsuario != null) && (validarClave != null) && (!detenerBucle)) {
+     for (let i = 0; i < baseClientes.length; i++) {
+         if((ingresoUsuario == baseClientes[i].nombre) && (validarClave == baseClientes[i].clave) ){
+             detenerBucle = true;
+         }
+     }
+
+     if (detenerBucle) {
+         document.getElementById("bienvenidaUsuario").innerHTML = `Bienvenido/a ${ingresoUsuario}!`;
+         document.getElementById("link").innerHTML = `Extracciones`;
+     } else {
+         alert("Usuario o clave incorrecta");         
+         break;
+     }
+ }
+ }
+
+/*
+//instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
 
 function validacionUsuario() {
-    ingresoUsuario = prompt("Bienvenido a la red GlobalBank! por favor, ingrese su usuario (Los caracteres en mayúscula pueden influir en el ingreso)");
+    ingresoUsuario = document.getElementById("usuario").innerHTML;
     while(ingresoUsuario != null && ingresoUsuario != usuarioGlobalBank.nombre) {
         if(ingresoUsuario != usuarioGlobalBank.nombre){
             alert("Usuario no registrado");
         }
-            ingresoUsuario = prompt("Por favor, ingrese su usuario");
+            //ingresoUsuario = prompt("Por favor, ingrese su usuario");
         }
     if(ingresoUsuario == null) {
         alert("Hasta la próxima!");        
         }
     else {
-        ingresoClave = prompt(`Bienvenido ${ingresoUsuario}. Por favor, ingrese su clave`);
+        
         }
-    
+        ingresoClave = document.getElementById("clave").innerHTML;
 
     while(ingresoClave != null && ingresoClave != usuarioGlobalBank.clave) {
         if(ingresoClave != usuarioGlobalBank.clave) {
@@ -67,7 +91,7 @@ function validacionUsuario() {
         }
 };
 
-validacionUsuario();
+//validacionUsuario();
 
 function mostrarInstrucciones() {
     for (let i = 0; i < instructivo.length; i++) {
@@ -131,10 +155,10 @@ Retiro();
 
 
 const datosDeExtraccion = {
-		usuario: usuarioGlobalBank.nombre,
+		usuario: ingresoUsuario,
         extraccion: retiroDinero        
 }
 
 function datos() {
-  document.getElementById("boton").innerHTML = `Usuario: ${usuarioGlobalBank.nombre} \n, Extracción $${retiroDinero}`;
-}
+  document.getElementById("boton").innerHTML = `Usuario: ${ingresoUsuario} | Extracción $${retiroDinero}`;
+}*/

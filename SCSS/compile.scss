@@ -56,10 +56,11 @@ body {
 label {
     color: aliceblue;
     background-color: cadetblue;
-    border-radius: 6px;
+    border-radius: 4px;
     padding: 0.5%;
     text-align: center;
     margin: 5% 0 0 0;
+    font-family: 'Cabin', sans-serif;
 }
 
 h1 {
@@ -72,4 +73,27 @@ h1 {
     display: block;
     margin: 5% auto;
     font-family: 'Cabin', sans-serif;
+}
+#bienvenidaUsuario {
+    background-color: #42db61;
+    text-align: center;
+    color: white;
+    border-radius: 60px;
+    padding: 5px;
+    font-size: 1.5rem;
+    font-family: 'Cabin', sans-serif;
+}
+#link {
+    text-align: center;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: cadetblue;
+    width: max-content;
+    margin: auto;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: 'Cabin', sans-serif;
+    &:hover {
+        color: darken($color: #e3e8f0, $amount: 21);
+    }
 }
