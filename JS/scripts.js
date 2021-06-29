@@ -51,6 +51,7 @@ const baseClientes = [
      if (detenerBucle) {
          document.getElementById("bienvenidaUsuario").innerHTML = `<p>Bienvenido/a ${ingresoUsuario.value}!</p>`;
          document.getElementById("link").innerHTML = `Extracciones`;
+         document.getElementById("error").innerHTML = "";
      } else {
          document.getElementById("error").innerHTML = "Usuario o clave incorrecta";         
          break;
