@@ -3,8 +3,10 @@ let ingresoClave;
 let instructivo;
 let retiroDinero;
 let detenerBucle = false; 
-let ingresoUsuario = document.getElementById("usuario");
-let validarClave = document.getElementById("clave");
+let ingresoUsuario = document.getElementById("usuarioValidacion");
+let validarClave = document.getElementById("claveValidacion");
+
+instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
 
 
 class cliente {
@@ -33,8 +35,8 @@ const baseClientes = [
 
  console.log(!detenerBucle);
 
- document.getElementById("usuario").value = "";
- document.getElementById("clave").value = "";
+ document.getElementById("usuarioValidacion").value = "";
+ document.getElementById("claveValidacion").value = "";
  document.getElementById("botonValidacion").addEventListener("click", validacionUsuario);
 
  
@@ -52,6 +54,8 @@ const baseClientes = [
          document.getElementById("bienvenidaUsuario").innerHTML = `<p>Bienvenido/a ${ingresoUsuario.value}!</p>`;
          document.getElementById("link").innerHTML = `Extracciones`;
          document.getElementById("error").innerHTML = "";
+         
+         
      } else {
          document.getElementById("error").innerHTML = "Usuario o clave incorrecta";         
          break;
@@ -59,8 +63,19 @@ const baseClientes = [
  }
  }
 
+ 
+
+ function mostrarInstrucciones() {
+    for (let i = 0; i < instructivo.length; i++) {
+    document.getElementById("instrucciones").innerHTML = instructivo[i];    
+    }
+};
+
+
+
+
 /*
-//instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
+
 
 function validacionUsuario() {
     ingresoUsuario = document.getElementById("usuario").innerHTML;
@@ -94,17 +109,7 @@ function validacionUsuario() {
 
 //validacionUsuario();
 
-function mostrarInstrucciones() {
-    for (let i = 0; i < instructivo.length; i++) {
-    alert(instructivo[i]);    
-    }
-};
 
-while(ingresoUsuario == null || ingresoClave == null){
-    break;
-}
-
-//mostrarInstrucciones();
 
 function tipoBillete() {
     cambioDinero = prompt("Indique con numeros que tipos de billete desea recibir:  $100 , $200 , $500 o $1000");   

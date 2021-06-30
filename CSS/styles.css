@@ -24,7 +24,7 @@ body {
   color: aliceblue;
   background-color: cadetblue; }
 
-.validacion {
+.validacion, .registro {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,6 +32,11 @@ body {
   justify-content: center;
   width: max-content;
   margin: 0 auto; }
+  .validacion__usuario, .registro__usuario {
+    display: ruby;
+    margin: 5% auto 5%; }
+  .validacion__clave, .registro__clave {
+    display: ruby; }
 
 .boton {
   margin: 5% 0 0 0;
@@ -46,8 +51,8 @@ body {
   border-radius: 20px;
   font-family: 'Cabin', sans-serif; }
 
-#botonValidacion {
-  margin: 10% auto 0;
+#botonValidacion, #botonRegistro, #botonEnvioRegistro {
+  margin: 3% auto 0;
   width: max-content;
   font-size: 1.2rem;
   background-color: darkcyan;
@@ -56,15 +61,28 @@ body {
   border-radius: 5px;
   padding: 1% 3% 1%;
   font-family: 'Cabin', sans-serif; }
+  #botonValidacion__link, #botonRegistro__link, #botonEnvioRegistro__link {
+    text-decoration: none;
+    color: aliceblue; }
+    #botonValidacion__link:hover, #botonRegistro__link:hover, #botonEnvioRegistro__link:hover {
+      color: #9dafcb; }
+
+.botones {
+  text-align: center; }
 
 label {
-  color: aliceblue;
+  color: white;
   background-color: cadetblue;
   border-radius: 4px;
-  padding: 0.5%;
+  padding: 1%;
   text-align: center;
   margin: 5% 0 0 0;
-  font-family: 'Cabin', sans-serif; }
+  font-family: 'Cabin', sans-serif;
+  display: ruby-base-container;
+  font-size: 1.3rem; }
+
+#claveValidacion {
+  margin: 0 0 0 6.3%; }
 
 h1 {
   text-align: center;
@@ -82,7 +100,7 @@ h1 {
   color: white;
   border-radius: 20px;
   padding: 0 10px 0 10px;
-  margin: 10% auto;
+  margin: 2% auto;
   font-family: 'Cabin', sans-serif;
   height: max-content;
   width: max-content; }
@@ -93,7 +111,7 @@ h1 {
   color: white;
   border-radius: 20px;
   padding: 0 10px 0 10px;
-  margin: 10% auto;
+  margin: 1% auto;
   font-family: 'Cabin', sans-serif;
   height: max-content;
   width: max-content; }

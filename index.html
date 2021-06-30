@@ -22,16 +22,27 @@
     <h1>Bienvenido a la red de cajeros GlobalBank</h1>
     
     <div class="validacion">
-        <label class="validacion__usuario" for="usuario">Ingrese su usuario</label>
-        <input id = "usuario" type="text">        
-        <label class="validacion__clave" for="clave">Ingrese su clave</label>
-        <input id = "clave"   type="password">
-        <button id="botonValidacion" type="submit">
-            Enviar
-        </button>
-        <div id="bienvenidaUsuario"></div>
-        <div id="error"></div>
+        <div class="validacion__usuario">
+            <label class="validacion__usuario--label" for="usuario">Ingrese su usuario</label>
+            <input id = "usuarioValidacion" type="text">   
+        </div>     
+        <div class="validacion__clave">
+            <label class="validacion__clave--label" for="clave">Ingrese su clave</label>
+            <input id = "claveValidacion"   type="password">
+        </div>
     </div>
+    <div class="botones">
+        <button id="botonValidacion" type="submit">
+            Ingresar
+        </button>
+        <button id="botonRegistro" type="button">
+            <a href="./Pages/registro.html" id="botonRegistro__link">Registrarse</a> 
+        </button>
+    </div>
+    <div id="bienvenidaUsuario"></div>
+    <div id="error"></div>
+    <div id="instrucciones"></div>
+    
     <a href="./Pages/extracciones.html" id="link"></a>
  </div>
  <script src="./JS/scripts.js"></script>
