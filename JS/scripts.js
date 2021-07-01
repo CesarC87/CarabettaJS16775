@@ -9,19 +9,52 @@ let validarClave = document.getElementById("claveValidacion");
 instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
 
 
-class cliente {
-    usuario(nombre, apellido, clave) {
+/*class cliente {
+    constructor (nombre, apellido, clave) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.clave = clave;        
     }       
-};
+};*/
 
 const baseClientes = [
     {nombre: "Jorge", apellido: "Perez", clave: 1234},
     {nombre: "Carla", apellido: "Santoro", clave: 6789},
     {nombre: "Juan", apellido: "Batman", clave: 5678},
 ];      
+
+ //document.getElementById("usuarioValidacion").value = "";
+ //document.getElementById("claveValidacion").value = "";
+ //document.getElementById("botonValidacion").addEventListener("click", validacionUsuario);
+ document.getElementById("usuarioRegistro").value = "";
+ document.getElementById("apellidoRegistro").value = "";
+ document.getElementById("claveRegistro").value = "";
+ document.getElementById("botonEnvioRegistro").addEventListener("click", registro);
+
+ 
+ let capturaNombre = document.getElementById("usuarioRegistro").value;
+ let capturaApellido = document.getElementById("apellidoRegistro").value;
+ let capturaClave = document.getElementById("claveRegistro").value;
+
+function registro() {
+    if ((capturaNombre != "") && (capturaApellido != "") && (capturaClave != "")){
+        function Cliente (nombre, apellido, clave){
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.clave = clave;        
+        }        
+        let capturaNombre = document.getElementById("usuarioRegistro").value;
+        let capturaApellido = document.getElementById("apellidoRegistro").value;
+        let capturaClave = document.getElementById("claveRegistro").value;
+
+        let nuevoCliente = new Cliente(capturaNombre,capturaApellido,capturaClave);     
+        console.log(nuevoCliente);
+    }
+    else {
+    document.getElementById("errorRegistro").innerHTML = "<p>Debe completar todos los campos</p>";
+ }
+
+}
 
 //const cliente1 = baseClientes.push(new cliente("Jorge", "Camaleon", 5678));
 //const cliente2 = baseClientes.push(new cliente("Juan Carlos", "Batman", 1234));
@@ -35,9 +68,8 @@ const baseClientes = [
 
  console.log(!detenerBucle);
 
- document.getElementById("usuarioValidacion").value = "";
- document.getElementById("claveValidacion").value = "";
- document.getElementById("botonValidacion").addEventListener("click", validacionUsuario);
+ 
+ 
 
  
 
