@@ -27,7 +27,7 @@ const baseClientes = [
  document.getElementById("claveValidacion").value = "";
  document.getElementById("botonValidacion").addEventListener("click", validacionUsuario);
  
-
+ 
 //const cliente1 = baseClientes.push(new cliente("Jorge", "Camaleon", 5678));
 //const cliente2 = baseClientes.push(new cliente("Juan Carlos", "Batman", 1234));
 //const cliente3 = baseClientes.push(new cliente("Pepe", "De Santis", 0909)); 
