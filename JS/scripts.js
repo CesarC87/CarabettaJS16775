@@ -23,38 +23,10 @@ const baseClientes = [
     {nombre: "Juan", apellido: "Batman", clave: 5678},
 ];      
 
- //document.getElementById("usuarioValidacion").value = "";
- //document.getElementById("claveValidacion").value = "";
- //document.getElementById("botonValidacion").addEventListener("click", validacionUsuario);
- document.getElementById("usuarioRegistro").value = "";
- document.getElementById("apellidoRegistro").value = "";
- document.getElementById("claveRegistro").value = "";
- document.getElementById("botonEnvioRegistro").addEventListener("click", registro);
-
+ document.getElementById("usuarioValidacion").value = "";
+ document.getElementById("claveValidacion").value = "";
+ document.getElementById("botonValidacion").addEventListener("click", validacionUsuario);
  
- let capturaNombre = document.getElementById("usuarioRegistro").value;
- let capturaApellido = document.getElementById("apellidoRegistro").value;
- let capturaClave = document.getElementById("claveRegistro").value;
-
-function registro() {
-    if ((capturaNombre != "") && (capturaApellido != "") && (capturaClave != "")){
-        function Cliente (nombre, apellido, clave){
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.clave = clave;        
-        }        
-        let capturaNombre = document.getElementById("usuarioRegistro").value;
-        let capturaApellido = document.getElementById("apellidoRegistro").value;
-        let capturaClave = document.getElementById("claveRegistro").value;
-
-        let nuevoCliente = new Cliente(capturaNombre,capturaApellido,capturaClave);     
-        console.log(nuevoCliente);
-    }
-    else {
-    document.getElementById("errorRegistro").innerHTML = "<p>Debe completar todos los campos</p>";
- }
-
-}
 
 //const cliente1 = baseClientes.push(new cliente("Jorge", "Camaleon", 5678));
 //const cliente2 = baseClientes.push(new cliente("Juan Carlos", "Batman", 1234));
@@ -66,12 +38,9 @@ function registro() {
 
 
 
- console.log(!detenerBucle);
+ 
+console.log(!detenerBucle);
 
- 
- 
-
- 
 
  function validacionUsuario() {
     
