@@ -28,6 +28,7 @@ function registro() {
         let nuevoCliente = new Cliente(capturaNombre,capturaApellido,capturaClave);     
         baseClientes.push(nuevoCliente);
         console.log(baseClientes);
+        registroDiv.appendChild(registroExitoso);
     }
     //else {
     //document.getElementById("errorRegistro").innerHTML = "<p>Debe completar todos los campos</p>";
@@ -38,6 +39,12 @@ const errorDeRegistro = document.createElement("p");
 errorDeRegistro.classList.add("errorRegistro");
 errorDeRegistro.setAttribute("id", "registroFail");
 errorDeRegistro.innerHTML = "Debe completar todos los campos";
+
+const registroExitoso = document.createElement("p");
+registroExitoso.classList.add("okRegistro");
+registroExitoso.setAttribute("id", "registroSuccess");
+registroExitoso.innerHTML = "¡Registro exitoso!";
+
 
 function campoIncompleto() {
     if ((capturaNombre = "") || (capturaApellido = "") || (capturaClave = "")) {

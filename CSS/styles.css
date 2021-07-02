@@ -143,3 +143,12 @@ h1 {
   padding: 2%;
   border-radius: 20px;
   font-family: 'Cabin', sans-serif; }
+
+.okRegistro {
+  color: white;
+  background-color: #59f27f;
+  width: max-content;
+  margin: 5% auto;
+  padding: 2%;
+  border-radius: 20px;
+  font-family: 'Cabin', sans-serif; }
