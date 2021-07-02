@@ -41,8 +41,17 @@ body {
         display: ruby;
         margin: 5% auto 5%;
     }
+    &__apellido {
+        &--input {
+            margin: 0 0 0 1.3%;
+        }
+    }
     &__clave {
         display: ruby;
+        margin: 5% 0 0 0;
+        &--input {
+            margin: 0 0 0 9%;
+        }
     }
 }
 
@@ -92,7 +101,7 @@ label {
     display: ruby-base-container;
     font-size: 1.3rem;
     }
-#claveValidacion, #claveRegistro {
+#claveValidacion {
     margin: 0 0 0 6.3%;
 }
 h1 {
@@ -141,4 +150,14 @@ h1 {
     &:hover {
         color: darken($color: #e3e8f0, $amount: 21);
     }
+}
+
+.errorRegistro {  /*Mensaje de error cuando el usuario no completa algun campo de los inputs*/
+    color: white;
+    background-color: rgb(242, 211, 89);
+    width: max-content;
+    margin: 5% auto;
+    padding: 2%;
+    border-radius: 20px;
+    font-family: 'Cabin', sans-serif;
 }

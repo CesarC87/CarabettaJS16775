@@ -1,7 +1,7 @@
 document.getElementById("usuarioRegistro").value = "";
 document.getElementById("apellidoRegistro").value = "";
 document.getElementById("claveRegistro").value = "";
-document.getElementById("botonEnvioRegistro").addEventListener("click", registro);
+document.getElementById("botonEnvioRegistro").addEventListener("click", campoIncompleto);
 
  
 let capturaNombre = document.getElementById("usuarioRegistro").value;
@@ -15,7 +15,7 @@ const baseClientes = [
 ];      
 
 function registro() {
-    //if ((capturaNombre != "") && (capturaApellido != "") && (capturaClave != "")) {}
+    //if ((capturaNombre != "") && (capturaApellido != "") && (capturaClave != "")) {
         function Cliente (nombre, apellido, clave){
             this.nombre = nombre;
             this.apellido = apellido;
@@ -28,10 +28,22 @@ function registro() {
         let nuevoCliente = new Cliente(capturaNombre,capturaApellido,capturaClave);     
         baseClientes.push(nuevoCliente);
         console.log(baseClientes);
-
-
     }
-    /*else {
-    document.getElementById("errorRegistro").innerHTML = "<p>Debe completar todos los campos</p>";
- }*/
+    //else {
+    //document.getElementById("errorRegistro").innerHTML = "<p>Debe completar todos los campos</p>";
+ //}
+//}
+const registroDiv = document.querySelector(".registro");
+const errorDeRegistro = document.createElement("p");
+errorDeRegistro.classList.add("errorRegistro");
+errorDeRegistro.setAttribute("id", "registroFail");
+errorDeRegistro.innerHTML = "Debe completar todos los campos";
 
+function campoIncompleto() {
+    if ((capturaNombre = "") || (capturaApellido = "") || (capturaClave = "")) {
+    registroDiv.appendChild(errorDeRegistro);
+    }
+    else {
+        registro();
+    }
+}
