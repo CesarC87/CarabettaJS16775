@@ -9,14 +9,6 @@ let validarClave = document.getElementById("claveValidacion");
 instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
 
 
-/*class cliente {
-    constructor (nombre, apellido, clave) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.clave = clave;        
-    }       
-};*/
-
 const baseClientes = [
     {nombre: "Jorge", apellido: "Perez", clave: 1234},
     {nombre: "Carla", apellido: "Santoro", clave: 6789},
@@ -26,22 +18,7 @@ const baseClientes = [
  document.getElementById("usuarioValidacion").value = "";
  document.getElementById("claveValidacion").value = "";
  document.getElementById("botonValidacion").addEventListener("click", validacionUsuario);
- 
- 
-//const cliente1 = baseClientes.push(new cliente("Jorge", "Camaleon", 5678));
-//const cliente2 = baseClientes.push(new cliente("Juan Carlos", "Batman", 1234));
-//const cliente3 = baseClientes.push(new cliente("Pepe", "De Santis", 0909)); 
-
-//const validacion = baseClientes.find((usuario) => usuario.nombre == "Jorge");
-
-//console.log(validacion);
-
-
-
- 
-console.log(!detenerBucle);
-
-
+  
  function validacionUsuario() {
     
     while((ingresoUsuario.value != null) && (validarClave.value != null) && (!detenerBucle)) {
@@ -53,7 +30,7 @@ console.log(!detenerBucle);
 
      if (detenerBucle) {
          document.getElementById("bienvenidaUsuario").innerHTML = `<p>Bienvenido/a ${ingresoUsuario.value}!</p>`;
-         document.getElementById("link").innerHTML = `Extracciones`;
+         validacionDiv.appendChild(linkExtracciones);
          document.getElementById("error").innerHTML = "";
          
          
@@ -63,6 +40,13 @@ console.log(!detenerBucle);
      }
  }
  }
+
+const validacionDiv = document.querySelector(".linkExtracciones");
+
+const linkExtracciones = document.createElement("a");
+linkExtracciones.classList.add("linkExtracciones");
+linkExtracciones.setAttribute("href", "./Pages/extracciones.html");
+linkExtracciones.textContent = "Extracciones"; 
 
  
 
@@ -75,97 +59,10 @@ console.log(!detenerBucle);
 
 
 
-/*
-
-
-function validacionUsuario() {
-    ingresoUsuario = document.getElementById("usuario").innerHTML;
-    while(ingresoUsuario != null && ingresoUsuario != usuarioGlobalBank.nombre) {
-        if(ingresoUsuario != usuarioGlobalBank.nombre){
-            alert("Usuario no registrado");
-        }
-            //ingresoUsuario = prompt("Por favor, ingrese su usuario");
-        }
-    if(ingresoUsuario == null) {
-        alert("Hasta la próxima!");        
-        }
-    else {
-        
-        }
-        ingresoClave = document.getElementById("clave").innerHTML;
-
-    while(ingresoClave != null && ingresoClave != usuarioGlobalBank.clave) {
-        if(ingresoClave != usuarioGlobalBank.clave) {
-            alert("Clave incorrecta, vuelva a intentarlo");
-        }
-            ingresoClave = prompt("Bienvenido a la red de cajeros GlobalBank. Por favor, ingrese su clave");
-        }
-        if(ingresoClave == null) {
-            alert("Hasta la próxima!");
-        }
-        else {
-            alert("Bienvenido a la red!");
-        }
-};
-
-//validacionUsuario();
 
 
 
-function tipoBillete() {
-    cambioDinero = prompt("Indique con numeros que tipos de billete desea recibir:  $100 , $200 , $500 o $1000");   
-    if(retiroDinero % cambioDinero == 0){
-        switch (cambioDinero) {
-            case "100":
-                alert(`Usted recibirá ${retiroDinero/cambioDinero} billete/s de $100, gracias por utilizar nuestros servicios`);
-                break;
-            case "200":
-                alert(`Usted recibirá ${retiroDinero/cambioDinero} billete/s de $200, gracias por utilizar nuestros servicios`);
-                break;
-            case "500":
-                alert(`Usted recibirá ${retiroDinero/cambioDinero} billete/s de $500, gracias por utilizar nuestros servicios`);
-                break;
-            case "1000":
-                alert(`Usted recibirá ${retiroDinero/cambioDinero} billete/s de $1000, gracias por utilizar nuestros servicios`);
-                break; 
-            default: 
-            alert("No ha ingresado un tipo de billete correcto");  
-            }    
-        }else {
-            while(retiroDinero % cambioDinero != 0) {
-                alert(`El billete elegido es de mayor valor que el monto ingresado. Elija otro tipo de billete`);
-                tipoBillete();
-        }    
-    };           
-  
-   }
-function Retiro() {
-    retiroDinero = prompt("Ingrese el monto a retirar. Recuerde que nuestros cajeros solo permiten el retiro de cifras que sean multiplos de 100 (es decir, que terminen en 00). Monto mínimo de extracción: $100");
-    while(retiroDinero == null || retiroDinero < 100){
-        alert("Monto no ingresado o incorrecto");
-        retiroDinero = prompt("Ingrese el monto a retirar. Recuerde que nuestros cajeros solo permiten el retiro de cifras que sean multiplos de 100 (es decir, que terminen en 00). Monto mínimo de extracción: $100");
-    }
-    if(retiroDinero % 100 == 0) {    
-    tipoBillete();
-  }
-    else {
-        while(retiroDinero % 100 != 0) {
-            alert(`Debe ingresar un monto multiplo de 100 (debe terminar en 00), vuelva a intentarlo`);
-            Retiro();
-        }
-    }
-  
-}
-
-Retiro();
 
 
 
-const datosDeExtraccion = {
-		usuario: ingresoUsuario,
-        extraccion: retiroDinero        
-}
 
-function datos() {
-  document.getElementById("boton").innerHTML = `Usuario: ${ingresoUsuario} | Extracción $${retiroDinero}`;
-}*/

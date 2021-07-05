@@ -20,30 +20,29 @@
  </header>
  <div class="bodyflex">
     <h1>Registro de usuario</h1>
-    
-    <div class="registro">
-        <div class="registro__usuario">
-            <label class="registro__usuario--label" for="usuario">Nombre de usuario</label>
-            <input id = "usuarioRegistro" class="registro__usuario--input" type="text">   
-        </div>     
-        <div class="registro__apellido">
-            <label class="registro__apellido--label" for="clave">Ingrese su apellido</label>
-            <input id = "apellidoRegistro" class="registro__apellido--input"  type="text">
+    <form action="" class="formulario" id="formulario"></form>
+        <div class="registro">
+            <div class="registro__usuario">
+                <label class="registro__usuario--label" for="usuario">Nombre de usuario</label>
+                <input id = "usuarioRegistro" class="registro__usuario--input" type="text">   
+            </div>     
+            <div class="registro__apellido">
+                <label class="registro__apellido--label" for="clave">Ingrese su apellido</label>
+                <input id = "apellidoRegistro" class="registro__apellido--input"  type="text">
+            </div>
+            <div class="registro__clave">
+                <label class="registro__clave--label" for="clave">Ingrese su clave</label>
+                <input id = "claveRegistro" class="registro__clave--input"  type="password">
+            </div>
         </div>
-        <div class="registro__clave">
-            <label class="registro__clave--label" for="clave">Ingrese su clave</label>
-            <input id = "claveRegistro" class="registro__clave--input"  type="password">
+        <div class="botones">        
+            <button id="botonEnvioRegistro" type="submit">
+                Enviar
+            </button>
         </div>
-    </div>
-    <div class="botones">
-        
-        <button id="botonEnvioRegistro" type="submit">
-            Enviar
-        </button>
-    </div>
-    <div id="registroExitoso"></div>
-    <div id="errorRegistro"></div>
-    
+        <div id="registroExitoso"></div>
+        <div id="errorRegistro"></div>
+    </form>
     
     <a href="../index.html" id="link"></a>
  </div>
