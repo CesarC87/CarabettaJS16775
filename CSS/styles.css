@@ -78,12 +78,11 @@ body {
 label {
   color: white;
   background-color: cadetblue;
-  border-radius: 4px;
-  padding: 1%;
+  border-radius: 10px;
+  padding: 2%;
   text-align: center;
   margin: 5% 0 0 0;
   font-family: 'Cabin', sans-serif;
-  display: ruby-base-container;
   font-size: 1.3rem; }
 
 #claveValidacion {
@@ -133,6 +132,9 @@ h1 {
   font-family: 'Cabin', sans-serif; }
   .linkExtracciones:hover {
     color: #9dafcb; }
+
+#linkExtracciones {
+  margin: auto; }
 
 .errorRegistro {
   /*Mensaje de error cuando el usuario no completa algun campo de los inputs*/

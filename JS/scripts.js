@@ -41,7 +41,7 @@ const baseClientes = [
  }
  }
 
-const validacionDiv = document.querySelector(".linkExtracciones");
+const validacionDiv = document.querySelector("#linkExtracciones");
 
 const linkExtracciones = document.createElement("a");
 linkExtracciones.classList.add("linkExtracciones");

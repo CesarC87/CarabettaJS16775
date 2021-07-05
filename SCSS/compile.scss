@@ -93,12 +93,11 @@ body {
 label {
     color: white;
     background-color: cadetblue;
-    border-radius: 4px;
-    padding: 1%;
+    border-radius: 10px;
+    padding: 2%;
     text-align: center;
     margin: 5% 0 0 0;
-    font-family: 'Cabin', sans-serif;
-    display: ruby-base-container;
+    font-family: 'Cabin', sans-serif;    
     font-size: 1.3rem;
     }
 #claveValidacion {
@@ -150,6 +149,10 @@ h1 {
     &:hover {
         color: darken($color: #e3e8f0, $amount: 21);
     }
+}
+
+#linkExtracciones {
+    margin: auto;
 }
 
 .errorRegistro {  /*Mensaje de error cuando el usuario no completa algun campo de los inputs*/
