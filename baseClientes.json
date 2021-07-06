@@ -1,0 +1,15 @@
+
+
+{"baseClientes":[
+    { "nombre":"Jorge",  "apellido":"Perez" , "clave":"1234"},
+    { "nombre":"Carla",  "apellido":"Santoro" , "clave":"6789"},
+    { "nombre":"Juan",  "apellido":"Batman" , "clave":"5678"},
+    { "nombre":"Apu",  "apellido":"Nahasapemapetilan" , "clave":"4321"},
+    { "nombre":"Marge",  "apellido":"Thompson" , "clave":"2255"},
+    { "nombre":"Mirtha",  "apellido":"Legrand" , "clave":"9999"},
+    { "nombre":"John",  "apellido":"Malkovich" , "clave":"1212"},
+    { "nombre":"Juan",  "apellido":"Perez" , "clave":"3321"},
+    { "nombre":"Gerardo",  "apellido":"Sofovich" , "clave":"2121"},
+    { "nombre":"Anibal",  "apellido":"Troilo" , "clave":"2112"},
+    { "nombre":"Carlos",  "apellido":"Memen" , "clave":"2525"}  
+  ]}
