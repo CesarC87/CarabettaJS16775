@@ -6,6 +6,8 @@ const baseClientes = [
     {nombre: "Juan", apellido: "Batman", clave: 5678},
 ];   
 
+baseClientesJSON = JSON.stringify(baseClientes);
+localStorage.setItem("baseClientes", baseClientesJSON);
 
 const capturaNombre = document.querySelector("#usuarioRegistro");
 const capturaApellido = document.querySelector("#apellidoRegistro");
@@ -51,7 +53,7 @@ function registrarUsuario() {
     nuevoCliente = new Cliente(capturaNombre.value, capturaApellido.value, capturaClave.value);
     baseClientes.push(nuevoCliente); 
     console.log(baseClientes);
-    registroDiv.appendChild(registroExitoso);
+    registroDiv.appendChild(registroExitoso);    
     
     setTimeout(() => {
         registroExitoso.remove();
