@@ -18,8 +18,32 @@
         <a href="#">Contacto</a>
     </nav>
  </header>
- 
+<div class="bodyflex">
+    <h1>Extracciones</h1>
+    <h3 class="instruccionesRetiro">
+        Bienvenido a la red! Ingrese el monto a retirar.<br> Recuerde que la unidad mínima de retiro es de $100
+    </h3>
+    <form action="" class="extraccionesForm" id="extraccionesForm"></form>
+    <div class="extracciones">
+        <div class="extracciones__montoRetiro">
+            <label class="extracciones__montoRetiro--label" for="montoRetiro">Monto a retirar</label>
+            <input id = "montoRetiro" class="extracciones__montoRetiro--input" type="text">   
+        </div>     
+        <div class="extracciones__tipoRetiro">
+            <label class="extracciones__tipoRetiro--label" for="tipoRetiro">Tipo de billete</label>
+            <input id = "tipoRetiro" class="extracciones__tipoRetiro--input" type="text">   
+        </div> 
+        
+    </div>
+    <div class="botonesExtracciones">        
+        <button id="botonRetiro" type="submit">
+           Retirar
+        </button>
+    </div>
+    
+</form>
+</div>
 
-<script src="./JS/scripts.js"></script> 
+<script src="../JS/extracciones.js"></script> 
 </body>
 </html>
