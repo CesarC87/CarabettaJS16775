@@ -16,7 +16,11 @@ const baseClientes = [
 
 const baseClientesJSON = JSON.stringify(baseClientes);
 
-localStorage.setItem("baseClientes", baseClientesJSON);
+localStorage.setItem("pruebaJSON", baseClientesJSON);
+
+let recuperar = localStorage.getItem("pruebaJSON");
+let datosRecuperados = JSON.parse(recuperar);
+console.log(datosRecuperados);
 
 const capturaNombre = document.querySelector("#usuarioRegistro");
 const capturaApellido = document.querySelector("#apellidoRegistro");
