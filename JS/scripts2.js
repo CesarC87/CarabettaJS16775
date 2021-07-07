@@ -60,7 +60,7 @@ function registrarUsuario() {
         resetarInputs();
         iniciarRegistro();
     }, 5000);
-    return;
+    
 }
 
 function resetarInputs() {
@@ -69,8 +69,9 @@ function resetarInputs() {
     capturaClave.value = "";
 }
 
-const baseClientesJSON = JSON.stringify(baseClientes);
-const datosClientes = localStorage.setItem("baseClientes", baseClientesJSON);
+//localStorage.setItem("baseClientes", baseClientes);
+
+//const nueva_data = JSON.parse(localStorage.getItem("baseClientes"));
 
 const registroDiv = document.querySelector(".registro");
 
