@@ -15,12 +15,11 @@ const baseClientes = [
 ];   
 
 const baseClientesJSON = JSON.stringify(baseClientes);
-
 localStorage.setItem("pruebaJSON", baseClientesJSON);
-
 let recuperar = localStorage.getItem("pruebaJSON");
 let datosRecuperados = JSON.parse(recuperar);
 console.log(datosRecuperados);
+console.log(baseClientesJSON);
 
 const capturaNombre = document.querySelector("#usuarioRegistro");
 const capturaApellido = document.querySelector("#apellidoRegistro");
@@ -62,7 +61,6 @@ function Cliente (nombre, apellido, clave){
 function registrarUsuario() {
     console.log("Registrando nuevo usuario");
     let nuevoCliente;
-
     nuevoCliente = new Cliente(capturaNombre.value, capturaApellido.value, capturaClave.value);
     baseClientes.push(nuevoCliente);    
     console.log(baseClientes);
