@@ -33,16 +33,18 @@ body {
   width: max-content;
   margin: 0 auto; }
   .validacion__usuario, .registro__usuario {
-    display: ruby;
-    margin: 5% auto 5%; }
+    display: flex;
+    margin: 5% auto 5%;
+    flex-direction: row; }
   .validacion__apellido, .registro__apellido {
-    display: ruby;
-    margin: 5% auto; }
+    display: flex;
+    margin: 5% auto 5%;
+    flex-direction: row; }
     .validacion__apellido--input, .registro__apellido--input {
       margin: 0 0 0 0.8%; }
   .validacion__clave, .registro__clave {
-    display: ruby;
-    margin: 5% 0 0 0; }
+    display: flex;
+    flex-direction: row; }
     .validacion__clave--input, .registro__clave--input {
       margin: 0 0 0 9%; }
 
@@ -82,14 +84,13 @@ label {
   color: white;
   background-color: cadetblue;
   border-radius: 10px;
-  padding: 2%;
+  padding: 3px;
   text-align: center;
-  margin: 5% 0 0 0;
   font-family: 'Cabin', sans-serif;
   font-size: 1.3rem; }
 
 #claveValidacion {
-  margin: 0 0 0 6.3%; }
+  margin: 0 0 0 5.5%; }
 
 h1 {
   text-align: center;

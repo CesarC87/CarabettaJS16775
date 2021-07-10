@@ -38,19 +38,21 @@ body {
     width: max-content;
     margin: 0 auto;
     &__usuario {
-        display: ruby;
+        display: flex;
         margin: 5% auto 5%;
+        flex-direction: row;
     }
     &__apellido {
-        display: ruby;
-        margin: 5% auto;
+        display: flex;
+        margin: 5% auto 5%;
+        flex-direction: row;
         &--input {
             margin: 0 0 0 0.8%;
         }
     }
     &__clave {
-        display: ruby;
-        margin: 5% 0 0 0;
+        display: flex;
+        flex-direction: row;
         &--input {
             margin: 0 0 0 9%;
         }
@@ -96,14 +98,13 @@ label {
     color: white;
     background-color: cadetblue;
     border-radius: 10px;
-    padding: 2%;
-    text-align: center;
-    margin: 5% 0 0 0;
-    font-family: 'Cabin', sans-serif;    
+    padding: 3px;
+    text-align: center;    
+    font-family: 'Cabin', sans-serif;
     font-size: 1.3rem;
-    }
+}
 #claveValidacion {
-    margin: 0 0 0 6.3%;
+    margin: 0 0 0 5.5%;
 }
 h1 {
     text-align: center;
