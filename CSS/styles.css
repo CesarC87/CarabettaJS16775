@@ -47,6 +47,8 @@ body {
     flex-direction: row; }
     .validacion__clave--input, .registro__clave--input {
       margin: 0 0 0 9%; }
+    .validacion__clave--label, .registro__clave--label {
+      margin: 0 3% 0 0; }
 
 .boton {
   margin: 5% 0 0 0;
@@ -84,7 +86,7 @@ label {
   color: white;
   background-color: cadetblue;
   border-radius: 10px;
-  padding: 3px;
+  padding: 3%;
   text-align: center;
   font-family: 'Cabin', sans-serif;
   font-size: 1.3rem; }

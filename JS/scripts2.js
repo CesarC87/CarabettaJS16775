@@ -1,4 +1,4 @@
-const btnEnviar = document.querySelector("#botonEnvioRegistro");
+const btnEnviar = $("#botonEnvioRegistro");
 
 const baseClientes = [
     {nombre: "Jorge", apellido: "Perez", clave: 1234},
@@ -14,6 +14,8 @@ const baseClientes = [
     { nombre:"Carlos",  apellido:"Memen" , clave:2525}  
 ];   
 
+//   Base de datos en JSON
+
 const baseClientesJSON = JSON.stringify(baseClientes);
 localStorage.setItem("pruebaJSON", baseClientesJSON);
 let recuperar = localStorage.getItem("pruebaJSON");
@@ -21,20 +23,25 @@ let datosRecuperados = JSON.parse(recuperar);
 console.log(datosRecuperados);
 console.log(baseClientesJSON);
 
+//--------------------------------
+
+// Levantar datos del user input
+
 const capturaNombre = document.querySelector("#usuarioRegistro");
 const capturaApellido = document.querySelector("#apellidoRegistro");
 const capturaClave = document.querySelector("#claveRegistro");
 
+//--------------------------------
 
 iniciarRegistro();
 capturaNombre.addEventListener("blur", validarUsuario);
 capturaApellido.addEventListener("blur", validarUsuario);
 capturaClave.addEventListener("blur", validarUsuario);
-btnEnviar.addEventListener("click", registrarUsuario);
+btnEnviar.on("click", registrarUsuario);
 
 function iniciarRegistro() {
     btnEnviar.disabled = true;
-    btnEnviar.classList.add("desabilitar-boton");
+    btnEnviar.addClass("desabilitar-boton");
 }
 
 function validarUsuario() {
@@ -43,7 +50,7 @@ function validarUsuario() {
     if(capturaNombre.value !== "" && capturaApellido.value !== "" && capturaClave.value !== "") {
         console.log("Habilitar botón");
         btnEnviar.disabled = false;
-        btnEnviar.classList.remove("desabilitar-boton");
+        btnEnviar.removeClass("desabilitar-boton");
         registroDiv.removeChild(errorDeRegistro);
     }
     else {
@@ -93,3 +100,7 @@ const registroExitoso = document.createElement("p");
 registroExitoso.classList.add("okRegistro");
 registroExitoso.setAttribute("id", "registroSuccess");
 registroExitoso.textContent = "¡Registro exitoso!"; 
+
+
+
+//$('body').append("<p><h2>¡Hola Coder!</h2></p>");
