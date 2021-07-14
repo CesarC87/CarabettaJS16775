@@ -51,10 +51,10 @@ function validarUsuario() {
         console.log("Habilitar botón");
         btnEnviar.disabled = false;
         btnEnviar.removeClass("desabilitar-boton");
-        registroDiv.removeChild(errorDeRegistro);
+        $(".errorRegistro").hide(1000); 
     }
     else {
-        registroDiv.appendChild(errorDeRegistro);
+        $(".errorRegistro").show(1000);
     }
         
 }
@@ -71,10 +71,11 @@ function registrarUsuario() {
     nuevoCliente = new Cliente(capturaNombre.value, capturaApellido.value, capturaClave.value);
     baseClientes.push(nuevoCliente);    
     console.log(baseClientes);
-    registroDiv.appendChild(registroExitoso);        
+    $(".errorRegistro").hide(1000);        
+    $(".okRegistro").show(1000);
         
     setTimeout(() => {
-        registroExitoso.remove();
+        $(".okRegistro").hide(1000);
         resetarInputs();
         iniciarRegistro();
     }, 5000);
@@ -87,20 +88,26 @@ function resetarInputs() {
     capturaClave.value = "";
 }
 
+// Animaciones con show y hide para desplegar mensajes de error
+
+const registroDiv = $(".registro");
+const errorDeRegistro = registroDiv.append(`<p class="errorRegistro"> Debe completar todos los campos </p>`);
+const registroExitoso = registroDiv.append(`<p class="okRegistro"> ¡Registro Exitoso! </p>`); 
+
+// Mensajes fijos
+
+//const registroDiv = document.querySelector(".registro");
+
+//const errorDeRegistro = document.createElement("p");
+//errorDeRegistro.classList.add("errorRegistro");
+//errorDeRegistro.setAttribute("id", "registroFail");
+//errorDeRegistro.textContent = "Debe completar todos los campos"; 
+
+//const registroExitoso = document.createElement("p");
+//registroExitoso.classList.add("okRegistro");
+//registroExitoso.setAttribute("id", "registroSuccess");
+//registroExitoso.textContent = "¡Registro exitoso!"; 
 
 
-const registroDiv = document.querySelector(".registro");
-
-const errorDeRegistro = document.createElement("p");
-errorDeRegistro.classList.add("errorRegistro");
-errorDeRegistro.setAttribute("id", "registroFail");
-errorDeRegistro.textContent = "Debe completar todos los campos"; 
-
-const registroExitoso = document.createElement("p");
-registroExitoso.classList.add("okRegistro");
-registroExitoso.setAttribute("id", "registroSuccess");
-registroExitoso.textContent = "¡Registro exitoso!"; 
 
 
-
-//$('body').append("<p><h2>¡Hola Coder!</h2></p>");

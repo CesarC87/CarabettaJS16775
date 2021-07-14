@@ -29,7 +29,7 @@ body {
     background-color: cadetblue;
 }
 
-.validacion, .registro {
+.validacion {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,6 +41,9 @@ body {
         display: flex;
         margin: 5% auto 5%;
         flex-direction: row;
+        &--label {
+            padding: 4px;
+        }
     }
     &__apellido {
         display: flex;
@@ -57,7 +60,47 @@ body {
             margin: 0 0 0 9%;
         }
         &--label {
-            margin: 0 3% 0 0;
+            padding: 1.5%;
+        }
+    }
+}
+
+.registro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10% 0 0 0;
+    justify-content: center;
+    width: max-content;
+    margin: 0 auto;
+    &__usuario {
+        display: flex;
+        margin: 5% auto 5%;
+        flex-direction: row;
+        &--label {
+            padding: 4px;
+            margin: 0 5% 0 0;
+        }
+    }
+    &__apellido {
+        display: flex;
+        margin: 0 0 4% 0;
+        flex-direction: row;
+        &--input {
+            margin: 0 0 0 0.8%;
+        }
+        &--label {
+            margin: 0 1% 0 0;
+        }
+    }
+    &__clave {
+        display: flex;
+        flex-direction: row;
+        &--input {
+            margin: 0 0 0 9%;
+        }
+        &--label {
+            margin: 0 4% 0 0;
         }
     }
 }
@@ -117,7 +160,7 @@ h1 {
     padding: 1%;
     color: #ffffff;
     display: block;
-    margin: 5% auto;
+    margin: 4% auto;
     font-family: 'Cabin', sans-serif;
 }
 #bienvenidaUsuario {
@@ -169,6 +212,7 @@ h1 {
     padding: 2%;
     border-radius: 20px;
     font-family: 'Cabin', sans-serif;
+    display: none;
 }
 
 .okRegistro {
@@ -179,6 +223,7 @@ h1 {
     padding: 2%;
     border-radius: 20px;
     font-family: 'Cabin', sans-serif;
+    display: none;
 }
 
 .desabilitar-boton {
@@ -195,21 +240,26 @@ h1 {
     flex-direction: column;
     text-align: center;
     &__montoRetiro {
-        margin: 5%;
+        margin: 3%;
         &--label {
-            padding: 1%;
+            padding: 0.7%;
+        }
+        &--input {
+            height: 90%;
         }
     }
     &__tipoRetiro {
         margin: 1%;
         &--label {
-            padding: 1%;
+            padding: 0.7%;
+        }
+        &--input {
+            height: 90%;
         }
     }
 }
 
 .botonesExtracciones {
-    margin: 5%;
     text-align: center;
 }
 
@@ -217,7 +267,7 @@ h1 {
     color: white;
     background-color: rgb(89, 242, 127);
     width: max-content;
-    margin: 5% auto;
+    margin: 1% auto;
     padding: 2%;
     border-radius: 20px;
     font-family: 'Cabin', sans-serif;
@@ -227,7 +277,7 @@ h1 {
     color: white;
     background-color: rgb(242, 211, 89);
     width: max-content;
-    margin: 5% auto;
+    margin: 1% auto;
     padding: 2%;
     border-radius: 20px;
     font-family: 'Cabin', sans-serif;

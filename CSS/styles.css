@@ -24,7 +24,7 @@ body {
   color: aliceblue;
   background-color: cadetblue; }
 
-.validacion, .registro {
+.validacion {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,23 +32,56 @@ body {
   justify-content: center;
   width: max-content;
   margin: 0 auto; }
-  .validacion__usuario, .registro__usuario {
+  .validacion__usuario {
     display: flex;
     margin: 5% auto 5%;
     flex-direction: row; }
-  .validacion__apellido, .registro__apellido {
+    .validacion__usuario--label {
+      padding: 4px; }
+  .validacion__apellido {
     display: flex;
     margin: 5% auto 5%;
     flex-direction: row; }
-    .validacion__apellido--input, .registro__apellido--input {
+    .validacion__apellido--input {
       margin: 0 0 0 0.8%; }
-  .validacion__clave, .registro__clave {
+  .validacion__clave {
     display: flex;
     flex-direction: row; }
-    .validacion__clave--input, .registro__clave--input {
+    .validacion__clave--input {
       margin: 0 0 0 9%; }
-    .validacion__clave--label, .registro__clave--label {
-      margin: 0 3% 0 0; }
+    .validacion__clave--label {
+      padding: 1.5%; }
+
+.registro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10% 0 0 0;
+  justify-content: center;
+  width: max-content;
+  margin: 0 auto; }
+  .registro__usuario {
+    display: flex;
+    margin: 5% auto 5%;
+    flex-direction: row; }
+    .registro__usuario--label {
+      padding: 4px;
+      margin: 0 5% 0 0; }
+  .registro__apellido {
+    display: flex;
+    margin: 0 0 4% 0;
+    flex-direction: row; }
+    .registro__apellido--input {
+      margin: 0 0 0 0.8%; }
+    .registro__apellido--label {
+      margin: 0 1% 0 0; }
+  .registro__clave {
+    display: flex;
+    flex-direction: row; }
+    .registro__clave--input {
+      margin: 0 0 0 9%; }
+    .registro__clave--label {
+      margin: 0 4% 0 0; }
 
 .boton {
   margin: 5% 0 0 0;
@@ -101,7 +134,7 @@ h1 {
   padding: 1%;
   color: #ffffff;
   display: block;
-  margin: 5% auto;
+  margin: 4% auto;
   font-family: 'Cabin', sans-serif; }
 
 #bienvenidaUsuario {
@@ -150,7 +183,8 @@ h1 {
   margin: 5% auto;
   padding: 2%;
   border-radius: 20px;
-  font-family: 'Cabin', sans-serif; }
+  font-family: 'Cabin', sans-serif;
+  display: none; }
 
 .okRegistro {
   color: white;
@@ -159,7 +193,8 @@ h1 {
   margin: 5% auto;
   padding: 2%;
   border-radius: 20px;
-  font-family: 'Cabin', sans-serif; }
+  font-family: 'Cabin', sans-serif;
+  display: none; }
 
 .desabilitar-boton {
   cursor: not-allowed;
@@ -171,23 +206,26 @@ h1 {
   flex-direction: column;
   text-align: center; }
   .extracciones__montoRetiro {
-    margin: 5%; }
+    margin: 3%; }
     .extracciones__montoRetiro--label {
-      padding: 1%; }
+      padding: 0.7%; }
+    .extracciones__montoRetiro--input {
+      height: 90%; }
   .extracciones__tipoRetiro {
     margin: 1%; }
     .extracciones__tipoRetiro--label {
-      padding: 1%; }
+      padding: 0.7%; }
+    .extracciones__tipoRetiro--input {
+      height: 90%; }
 
 .botonesExtracciones {
-  margin: 5%;
   text-align: center; }
 
 .okRetiro {
   color: white;
   background-color: #59f27f;
   width: max-content;
-  margin: 5% auto;
+  margin: 1% auto;
   padding: 2%;
   border-radius: 20px;
   font-family: 'Cabin', sans-serif; }
@@ -196,7 +234,7 @@ h1 {
   color: white;
   background-color: #f2d359;
   width: max-content;
-  margin: 5% auto;
+  margin: 1% auto;
   padding: 2%;
   border-radius: 20px;
   font-family: 'Cabin', sans-serif; }
