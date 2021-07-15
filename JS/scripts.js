@@ -6,7 +6,7 @@ let detenerBucle = false;
 let ingresoUsuario = document.getElementById("usuarioValidacion");
 let validarClave = document.getElementById("claveValidacion");
 
-$("h1").fadeIn(1000);
+$("h1").animate({opacity: 1}, 1500);
 
 instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
 

@@ -16,11 +16,11 @@ const baseClientes = [
 
 
 
-$(".h1Registro").slideDown(1300);
+$(".h1Registro").animate({opacity:1},1300);
 
-$(".h1Registro").fadeOut(1200, function(){    
+$(".h1Registro").animate({opacity:0},1200, function(){    
         $(".h1Registro").text("Registro Usuario");
-        $(".h1Registro").fadeIn(2000);        
+        $(".h1Registro").animate({opacity:1},2000);        
     }); 
 //   Base de datos en JSON
 
