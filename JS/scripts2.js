@@ -14,9 +14,14 @@ const baseClientes = [
     { nombre:"Carlos",  apellido:"Memen" , clave:2525}  
 ];   
 
-$("h1").fadeIn("slow");
 
 
+$(".h1Registro").fadeIn(1200);
+
+$(".h1Registro").fadeOut(1200, function(){    
+        $(".h1Registro").text("Registro Usuario");
+        $(".h1Registro").fadeIn(2000);        
+    }); 
 //   Base de datos en JSON
 
 const baseClientesJSON = JSON.stringify(baseClientes);

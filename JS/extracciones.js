@@ -7,8 +7,7 @@ const billete500 = document.querySelector("#tipoRetiro500");
 const billete1000 = document.querySelector("#tipoRetiro1000");
 
 
-$("h1").fadeIn(1500, function(){
-    
+$("h1").fadeIn(1200, function(){    
     $("h3").fadeIn(1500);
 }); 
 
@@ -16,8 +15,6 @@ btnRetirar.addEventListener("click", Retiro);
 
 //cambioDinero.value = "";
 retiroDinero.value = "";
-
-
 
 function tipoBillete() {    
     
