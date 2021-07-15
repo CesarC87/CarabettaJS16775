@@ -16,7 +16,7 @@ const baseClientes = [
 
 
 
-$(".h1Registro").fadeIn(1200);
+$(".h1Registro").slideDown(1300);
 
 $(".h1Registro").fadeOut(1200, function(){    
         $(".h1Registro").text("Registro Usuario");

@@ -8,7 +8,7 @@ const billete1000 = document.querySelector("#tipoRetiro1000");
 
 
 $("h1").fadeIn(1200, function(){    
-    $("h3").fadeIn(1500);
+    $("h3").slideDown(1500);
 }); 
 
 btnRetirar.addEventListener("click", Retiro);
