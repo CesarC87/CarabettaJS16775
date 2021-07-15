@@ -14,6 +14,9 @@ const baseClientes = [
     { nombre:"Carlos",  apellido:"Memen" , clave:2525}  
 ];   
 
+$("h1").fadeIn("slow");
+
+
 //   Base de datos en JSON
 
 const baseClientesJSON = JSON.stringify(baseClientes);

@@ -1,26 +1,29 @@
-const cambioDinero = document.querySelector("#tipoRetiro"); 
+//const cambioDinero = document.querySelector("#tipoRetiro"); 
 const retiroDinero = document.querySelector("#montoRetiro"); 
 const btnRetirar = document.querySelector("#botonRetiro");
+const billete100 = document.querySelector("#tipoRetiro100");
+const billete200 = document.querySelector("#tipoRetiro200");
+const billete500 = document.querySelector("#tipoRetiro500");
+const billete1000 = document.querySelector("#tipoRetiro1000");
 
+
+$("h1").fadeIn(1500, function(){
+    
+    $("h3").fadeIn(1500);
+}); 
 
 btnRetirar.addEventListener("click", Retiro);
 
-cambioDinero.value = "";
+//cambioDinero.value = "";
 retiroDinero.value = "";
 
-function tipoBillete() {
-      
-    if(retiroDinero.value % cambioDinero.value == 0){
-        switch (cambioDinero.value) {
-            case cambioDinero.value:                
-                retiroDiv.appendChild(retiroExitoso);                
-                break;
-            
-            default: 
-            alert("No ha ingresado un tipo de billete correcto");  
-            cambioDinero.value = "";
-            retiroDinero.value = "";
-            }    
+
+
+function tipoBillete() {    
+    
+    if(retiroDinero.value % cambioDinero.value == 0){                       
+        retiroDiv.appendChild(retiroExitoso);              
+        retiroExitoso.textContent = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de $${cambioDinero.value}, gracias por utilizar nuestros servicios`;                
             
         }else {
             if(retiroDinero.value % cambioDinero.value != 0) {                
@@ -29,14 +32,13 @@ function tipoBillete() {
         }    
         cambioDinero.value = "";
         retiroDinero.value = "";
-    };           
+    };          
   
    }
 function Retiro() {
     
     if(retiroDinero.value == null || retiroDinero.value < 100){
-        retiroDiv.appendChild(errorRetiro);
-        //retiroDinero.value = prompt("Ingrese el monto a retirar. Recuerde que nuestros cajeros solo permiten el retiro de cifras que sean multiplos de 100 (es decir, que terminen en 00). Monto mínimo de extracción: $100");
+        retiroDiv.appendChild(errorRetiro);        
     }
     if(retiroDinero.value % 100 == 0) {    
     tipoBillete();
@@ -63,6 +65,6 @@ errorRetiro.textContent = "Monto no ingresado o incorrecto";
 const retiroExitoso = document.createElement("p");
 retiroExitoso.classList.add("okRetiro");
 retiroExitoso.setAttribute("id", "retiroSuccess");
-retiroExitoso.textContent = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de ${cambioDinero.value}, gracias por utilizar nuestros servicios`; 
+ 
 
 
