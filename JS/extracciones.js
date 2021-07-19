@@ -13,20 +13,30 @@ cambioDinero.value = "";
 retiroDinero.value = "";
 
 
-function tipoBillete() {           
-                      
-     if(retiroDinero.value % cambioDinero.value == 0){                       
-        retiroDiv.appendChild(retiroExitoso);              
-        retiroExitoso.textContent = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de $${cambioDinero.value}, gracias por utilizar nuestros servicios`;                
-                    
-     }else {
-        if(retiroDinero.value % cambioDinero.value != 0) {                
-             retiroDiv.appendChild(errorRetiro);
-            tipoBillete();
-                }    
-            }
-        
-    };
+function tipoBillete() {
+      
+    if(retiroDinero.value % cambioDinero.value == 0){
+        switch (cambioDinero.value) {
+            case cambioDinero.value:                
+                retiroDiv.appendChild(retiroExitoso);                
+                break;
+            
+            default: 
+            alert("No ha ingresado un tipo de billete correcto");  
+            cambioDinero.value = "";
+            retiroDinero.value = "";
+            }    
+            
+        }else {
+            if(retiroDinero.value % cambioDinero.value != 0) {                
+                retiroDiv.appendChild(errorRetiro);
+                tipoBillete();
+        }    
+        cambioDinero.value = "";
+        retiroDinero.value = "";
+    };           
+  
+   }
         
     
     
@@ -46,7 +56,7 @@ function Retiro() {
             cambioDinero.value = "";
             retiroDinero.value = "";
         }
-    } 
+    }    
 
 }
 
@@ -60,6 +70,8 @@ errorRetiro.textContent = "Monto no ingresado o incorrecto";
 const retiroExitoso = document.createElement("p");
 retiroExitoso.classList.add("okRetiro");
 retiroExitoso.setAttribute("id", "retiroSuccess");
+retiroExitoso.textContent = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de ${cambioDinero.value}, gracias por utilizar nuestros servicios`; 
+
  
 
 

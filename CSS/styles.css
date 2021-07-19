@@ -218,6 +218,12 @@ h3 {
 .fieldFail {
   border-color: #f73d3d; }
 
+.fa-check-circle {
+  color: #19f819;
+  font-size: x-large;
+  display: block;
+  margin: 1%; }
+
 .desabilitar-boton {
   cursor: not-allowed;
   opacity: 0.5; }
