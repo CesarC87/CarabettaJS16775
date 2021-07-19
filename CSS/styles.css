@@ -222,7 +222,10 @@ h3 {
   color: #19f819;
   font-size: x-large;
   display: block;
-  margin: 1%; }
+  margin: 1%;
+  background-color: white;
+  border-radius: 80%;
+  height: fit-content; }
 
 .desabilitar-boton {
   cursor: not-allowed;
