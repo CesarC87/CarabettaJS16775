@@ -6,12 +6,32 @@ const expresiones = {
 }
 
 const formulario = document.getElementById("formulario");
-const inputs = document.querySelectorAll("#formulario input");
+const inputs = document.querySelectorAll("input");
+
+const validarFormulario = (e) => {
+    switch (e.target.name) {
+        case "Nombre":
+            if(expresiones.nombre.test(e.target.value)){
+                document.getElementById("usuarioRegistro").classList.add("fieldOk");
+                document.getElementById("usuarioRegistro").classList.remove("fieldFail");
+                console.log("Todo ok!");
+            }
+            else {
+                document.getElementById("usuarioRegistro").classList.remove("fieldOk");
+                document.getElementById("usuarioRegistro").classList.add("fieldFail");
+                console.log("Todo Mal!");
+            }
+        break;
+        case "Apellido":
+        break;
+        case "Clave":
+        break;
+    }
+}
 
 inputs.forEach ((input) => {
-    input.addEventListener("keyup", () => {
-
-    })
+    input.addEventListener(`keyup`, validarFormulario);
+    input.addEventListener(`blur`, validarFormulario);
 });
 
 formulario.addEventListener("submit", (e) => {

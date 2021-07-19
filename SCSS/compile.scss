@@ -3,6 +3,18 @@ body {
     margin: 0;
 }
 
+input {
+    width: 100%;
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 25px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+    align-self: center;
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
@@ -32,8 +44,9 @@ body {
 .validacion {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 10% 0 0 0;
+    background-color: cadetblue;
+    border-radius: 5px;
+    padding: 2%;
     justify-content: center;
     width: max-content;
     margin: 0 auto;
@@ -65,14 +78,17 @@ body {
     }
 }
 
+                                            /*REGISTRO*/
+
 .registro {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 10% 0 0 0;
-    justify-content: center;
+    justify-content: center;    
     width: max-content;
     margin: 0 auto;
+    background-color: cadetblue;
+    border-radius: 10px;
+    padding: 2%;
     &__usuario {
         display: flex;
         margin: 5% auto 5%;
@@ -97,13 +113,15 @@ body {
         display: flex;
         flex-direction: row;
         &--input {
-            margin: 0 0 0 9%;
+            margin: 0 0 0 6.5%;
         }
         &--label {
             margin: 0 4% 0 0;
         }
     }
 }
+
+
 
 .boton {
     margin: 5% 0 0 0;
@@ -141,11 +159,9 @@ body {
 }
 
 label {
-    color: white;
-    background-color: cadetblue;
+    color: white;    
     border-radius: 10px;
-    padding: 3%;
-    text-align: center;    
+    padding: 3%;       
     font-family: 'Cabin', sans-serif;
     font-size: 1.3rem;
 }
@@ -230,6 +246,14 @@ h3 {
     display: none;
 }
 
+.fieldOk {
+    border-color: rgb(25, 248, 25);
+}
+
+.fieldFail {
+    border-color: rgb(247, 61, 61);
+}
+
 .desabilitar-boton {
     cursor: not-allowed;
     opacity: 0.5;
@@ -243,13 +267,18 @@ h3 {
     display: flex;
     flex-direction: column;
     text-align: center;
+    background-color: cadetblue;
+    width: max-content;
+    margin: 2% auto;
+    border-radius: 10px;
     &__montoRetiro {
         margin: 3%;
         &--label {
             padding: 0.7%;
         }
         &--input {
-            height: 90%;
+            height: 25px;
+            width: 35%;
         }
     }
     &__tipoRetiro {
@@ -260,9 +289,12 @@ h3 {
         
         &--label {
             padding: 0.7%;
+            margin: 0 1% 0 0;
         }
         &--input {
-            height: 90%;
+            height: 25px;
+            width: 33%;
+            margin: 0 0 3% 0;
         }
     }
 }
