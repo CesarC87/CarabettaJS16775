@@ -68,7 +68,7 @@ const validarFormulario = (e) => {
             }
         break;
         case "Apellido":
-            if(expresiones.nombre.test(e.target.value)){
+            if(expresiones.apellido.test(e.target.value)){
                 document.getElementById("apellidoRegistro").classList.add("fieldOk");
                 document.getElementById("apellidoRegistro").classList.remove("fieldFail");
                 document.querySelector(`.registro__apellido i`).classList.add(`fa-check-circle`);
@@ -82,7 +82,7 @@ const validarFormulario = (e) => {
             }
         break;
         case "Clave":
-            if(expresiones.nombre.test(e.target.value)){
+            if(expresiones.contraseña.test(e.target.value)){
                 document.getElementById("claveRegistro").classList.add("fieldOk");
                 document.getElementById("claveRegistro").classList.remove("fieldFail");
                 document.querySelector(`.registro__clave i`).classList.add(`fa-check-circle`);
