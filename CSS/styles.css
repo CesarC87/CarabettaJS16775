@@ -15,17 +15,17 @@ input {
   input:focus {
     outline: none; }
 
-.navbar {
+body .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   background-color: #2f8e62; }
-  .navbar a {
+  body .navbar a {
     text-decoration: none;
     color: white;
     font-family: 'Benne', serif;
     font-size: 1.2rem; }
-    .navbar a:hover {
+    body .navbar a:hover {
       color: #9dafcb; }
 
 .bodyflex {

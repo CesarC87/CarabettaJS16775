@@ -78,7 +78,8 @@ const validarFormulario = (e) => {
             if(expresiones.contraseña.test(e.target.value)){
                 document.getElementById("claveRegistro").classList.add("fieldOk");
                 document.getElementById("claveRegistro").classList.remove("fieldFail");
-                document.querySelector(`.registro__clave i`).classList.add(`fa-check-circle`);               
+                document.querySelector(`.registro__clave i`).classList.add(`fa-check-circle`);     
+                document.querySelector(`.registro p`).classList.remove(`registro__parrafo--mostrar`);          
             }
             else {
                 document.getElementById("claveRegistro").classList.remove("fieldOk");
