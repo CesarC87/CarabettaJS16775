@@ -45,7 +45,6 @@ const expresiones = {
     apellido: /^[a-zA-ZÀ-ÿ\s]{2,30}$/, // Letras y espacios, posibilidad de acentos
     contraseña: /^.{6,16}$/ // 6 a 16 digitos
 }
-
 const formulario = document.getElementById("formulario");
 const inputs = document.querySelectorAll("input");
 
@@ -84,7 +83,8 @@ const validarFormulario = (e) => {
             else {
                 document.getElementById("claveRegistro").classList.remove("fieldOk");
                 document.getElementById("claveRegistro").classList.add("fieldFail");
-                document.querySelector(`.registro__clave i`).classList.remove(`fa-check-circle`);                
+                document.querySelector(`.registro__clave i`).classList.remove(`fa-check-circle`);
+                document.querySelector(`.registro p`).classList.add(`registro__parrafo--mostrar`);                
             }
         break;
     }
@@ -152,6 +152,12 @@ function resetarInputs() {
     capturaNombre.value = "";
     capturaApellido.value = "";
     capturaClave.value = "";
+    document.querySelector(`.registro__usuario i`).classList.remove(`fa-check-circle`);
+    document.querySelector(`.registro__apellido i`).classList.remove(`fa-check-circle`);
+    document.querySelector(`.registro__clave i`).classList.remove(`fa-check-circle`);
+    document.getElementById("usuarioRegistro").classList.remove("fieldOk");
+    document.getElementById("apellidoRegistro").classList.remove("fieldOk");
+    document.getElementById("claveRegistro").classList.remove("fieldOk");
 }
 // ------------------------------- Animaciones con show y hide para desplegar mensajes de error (con jQuery)
 const registroDiv = $(".registro");
