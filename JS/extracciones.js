@@ -13,51 +13,39 @@ cambioDinero.value = "";
 retiroDinero.value = "";
 
 
-function tipoBillete() {
-      
+function tipoBillete() {   // Función para chequear el tipo de billete a obtener
     if(retiroDinero.value % cambioDinero.value == 0){
-        switch (cambioDinero.value) {
-            case cambioDinero.value:                
-                retiroDiv.appendChild(retiroExitoso);                
-                break;
-            
-            default: 
-            alert("No ha ingresado un tipo de billete correcto");  
-            cambioDinero.value = "";
-            retiroDinero.value = "";
-            }    
-            
+                        
+                retiroDiv.appendChild(retiroExitoso); 
+                retiroExitoso.textContent = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de ${cambioDinero.value}, gracias por utilizar nuestros servicios`;               
+           
+                            
         }else {
-            if(retiroDinero.value % cambioDinero.value != 0) {                
+                           
                 retiroDiv.appendChild(errorRetiro);
                 tipoBillete();
         }    
         cambioDinero.value = "";
         retiroDinero.value = "";
-    };           
-  
-   }
-        
-    
-    
+    };             
+
+   
+           
 function Retiro() {
-    
-    if(retiroDinero.value == "" || retiroDinero.value < 100){
+    e.preventDefault();
+    if((retiroDinero.value == "") || (retiroDinero.value < 100)){ //Si el monto a retirar no está ingresado o es menor a 100, mostrar error
         retiroDiv.appendChild(errorRetiro);        
     }
-    if(retiroDinero.value % 100 == 0) {    
+    if(retiroDinero.value % 100 == 0) {    // Si el monto ingresado es multiplo de 100, pasar a la otra función
     tipoBillete();
-  }
+    }
     else {
-        if(retiroDinero.value % 100 != 0) {
-            
+        if(retiroDinero.value % 100 != 0) {   // Si el monto ingresado NO es multiplo de 100, mostrar error y reiniciar campos        
             retiroDiv.appendChild(errorRetiro);
             Retiro();
-            cambioDinero.value = "";
-            retiroDinero.value = "";
+            
         }
     }    
-
 }
 
 const retiroDiv = document.querySelector(".extracciones");
@@ -70,7 +58,7 @@ errorRetiro.textContent = "Monto no ingresado o incorrecto";
 const retiroExitoso = document.createElement("p");
 retiroExitoso.classList.add("okRetiro");
 retiroExitoso.setAttribute("id", "retiroSuccess");
-retiroExitoso.textContent = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de ${cambioDinero.value}, gracias por utilizar nuestros servicios`; 
+ 
 
  
 
