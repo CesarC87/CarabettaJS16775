@@ -180,6 +180,12 @@ h1 {
     font-family: 'Cabin', sans-serif;
     opacity: 0;
 }
+.h1Registro {
+    color: white;
+    margin: 2% auto;
+    font-family: 'Cabin', sans-serif;
+}
+
 h3 {
     display: none;
 }
@@ -279,16 +285,26 @@ h3 {
     border-radius: 20px;
     font-family: 'Cabin', sans-serif;
 }
-.tabla {
-    background-color: #104146;
+.tabla {    
     display: none;
 }
-.tablaON {
-    display: flex;
-    flex-direction: column;
+.bodyflex .table {
+    width: 100%;
+    max-width: max-content;
+    margin-bottom: 1rem;
+    background-color: #fdfbfb;
+    text-align: center;    
+    align-content: unset;
     align-items: center;
+    align-self: center;    
+}
+.table .table-hover {
+    display: flex;
+    flex-direction: column;    
     align-self: center;
     color: white;
+    opacity: 1;
+    
 }
   /*EXTRACCIONES*/
 

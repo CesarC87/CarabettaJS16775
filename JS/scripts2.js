@@ -23,7 +23,10 @@ function getData() {
          }
         }
       }
-    document.querySelector(".tabla").classList.add("tablaON");  
+    document.querySelector("#tabla").classList.remove("tabla");
+    document.querySelector("#tabla").classList.add("table");  
+    document.querySelector("#tabla").classList.add("table-hover");
+    
   }
 
 const btnEnviar = $("#botonEnvioRegistro");
@@ -176,15 +179,14 @@ function registrarUsuario() {
     baseClientes.push(nuevoCliente);    
     console.log(baseClientes);
     $(".errorRegistro").hide(1000);        
-    $(".okRegistro").show(1000);
+    $(".okRegistro").show(1000);   
         
     setTimeout(() => {
         $(".okRegistro").hide(1000);
         resetarInputs();
         iniciarRegistro();
         
-    }, 5000);
-    
+    }, 5000);    
 }
 
 function resetarInputs() {
