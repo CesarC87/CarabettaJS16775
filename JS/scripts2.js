@@ -1,4 +1,3 @@
-
 const btnEnviar = $("#botonEnvioRegistro");
 
 const baseClientes = [
@@ -13,9 +12,9 @@ const baseClientes = [
     { nombre:"Gerardo",  apellido:"Sofovich" , clave:2121},
     { nombre:"Anibal",  apellido:"Troilo" , clave:2112},
     { nombre:"Carlos",  apellido:"Memen" , clave:2525}  
-];   
+];
 
-
+// ------------------------------- Animación H1 
 
 $(".h1Registro").animate({opacity:1},1300);
 
@@ -23,7 +22,7 @@ $(".h1Registro").animate({opacity:0},1200, function(){
         $(".h1Registro").text("Registro Usuario");
         $(".h1Registro").animate({opacity:1},2000);        
     }); 
-//   Base de datos en JSON
+// ------------------------------- Base de datos en JSON
 
 const baseClientesJSON = JSON.stringify(baseClientes);
 localStorage.setItem("pruebaJSON", baseClientesJSON);
@@ -32,9 +31,7 @@ let datosRecuperados = JSON.parse(recuperar);
 console.log(datosRecuperados);
 console.log(baseClientesJSON);
 
-//--------------------------------
-
-// Levantar datos del user input
+// ------------------------------- Levantar datos del user input
 
 const capturaNombre = document.querySelector("#usuarioRegistro");
 const capturaApellido = document.querySelector("#apellidoRegistro");
@@ -58,47 +55,41 @@ const validarFormulario = (e) => {
             if(expresiones.nombre.test(e.target.value)){
                 document.getElementById("usuarioRegistro").classList.add("fieldOk");
                 document.getElementById("usuarioRegistro").classList.remove("fieldFail");
-                document.querySelector(`.registro__usuario i`).classList.add(`fa-check-circle`);
-                console.log("Todo ok!");
+                document.querySelector(`.registro__usuario i`).classList.add(`fa-check-circle`);                
             }
             else {
                 document.getElementById("usuarioRegistro").classList.remove("fieldOk");
                 document.getElementById("usuarioRegistro").classList.add("fieldFail");
-                document.querySelector(`.registro__usuario i`).classList.remove(`fa-check-circle`);
-                console.log("Todo Mal!");
+                document.querySelector(`.registro__usuario i`).classList.remove(`fa-check-circle`);              
             }
         break;
         case "Apellido":
             if(expresiones.apellido.test(e.target.value)){
                 document.getElementById("apellidoRegistro").classList.add("fieldOk");
                 document.getElementById("apellidoRegistro").classList.remove("fieldFail");
-                document.querySelector(`.registro__apellido i`).classList.add(`fa-check-circle`);
-                console.log("Todo ok!");
+                document.querySelector(`.registro__apellido i`).classList.add(`fa-check-circle`);                
             }
             else {
                 document.getElementById("apellidoRegistro").classList.remove("fieldOk");
                 document.getElementById("apellidoRegistro").classList.add("fieldFail");
-                document.querySelector(`.registro__apellido i`).classList.remove(`fa-check-circle`);
-                console.log("Todo Mal!");
+                document.querySelector(`.registro__apellido i`).classList.remove(`fa-check-circle`);                
             }
         break;
         case "Clave":
             if(expresiones.contraseña.test(e.target.value)){
                 document.getElementById("claveRegistro").classList.add("fieldOk");
                 document.getElementById("claveRegistro").classList.remove("fieldFail");
-                document.querySelector(`.registro__clave i`).classList.add(`fa-check-circle`);
-                console.log("Todo ok!");
+                document.querySelector(`.registro__clave i`).classList.add(`fa-check-circle`);               
             }
             else {
                 document.getElementById("claveRegistro").classList.remove("fieldOk");
                 document.getElementById("claveRegistro").classList.add("fieldFail");
-                document.querySelector(`.registro__clave i`).classList.remove(`fa-check-circle`);
-                console.log("Todo Mal!");
+                document.querySelector(`.registro__clave i`).classList.remove(`fa-check-circle`);                
             }
         break;
     }
 }
-
+// ------------------------------- Chequea si hay teclas presionadas o si el usuario se va del campo
 inputs.forEach ((input) => {
     input.addEventListener(`keyup`, validarFormulario);
     input.addEventListener(`blur`, validarFormulario);
@@ -108,22 +99,23 @@ formulario.addEventListener("submit", (e) => {
     e.preventDefault();
 });
 
-//-------------------------------- Expresiones Regulares
+//-------------------------------- Inicio de la funcion registro
 
 iniciarRegistro();
+
+// ------------------------------- Chequear si el usuario se sale del input
 capturaNombre.addEventListener("blur", validarUsuario);
 capturaApellido.addEventListener("blur", validarUsuario);
 capturaClave.addEventListener("blur", validarUsuario);
 btnEnviar.on("click", registrarUsuario);
-
+// ------------------------------- Desabilita el boton enviar hasta que todos los campos se completen
 function iniciarRegistro() {
     btnEnviar.disabled = true;
     btnEnviar.addClass("desabilitar-boton");
 }
-
+// ------------------------------- Chequea que los campos no esten vacíos
 function validarUsuario() {
-    console.log("Validando usuario");
-    
+    console.log("Validando usuario");    
     if(capturaNombre.value !== "" && capturaApellido.value !== "" && capturaClave.value !== "") {
         console.log("Habilitar botón");
         btnEnviar.disabled = false;
@@ -132,16 +124,15 @@ function validarUsuario() {
     }
     else {
         $(".errorRegistro").show(1000);
-    }
-        
+    }        
 }
-
+// ------------------------------- Crea Cliente
 function Cliente (nombre, apellido, clave){
     this.nombre = nombre;
     this.apellido = apellido;
     this.clave = clave;        
 }
-
+// ------------------------------- Empuja al array de objetos "baseClientes", creando un cliente con los inputs del usuario
 function registrarUsuario() {
     console.log("Registrando nuevo usuario");
     let nuevoCliente;
@@ -149,42 +140,21 @@ function registrarUsuario() {
     baseClientes.push(nuevoCliente);    
     console.log(baseClientes);
     $(".errorRegistro").hide(1000);        
-    $(".okRegistro").show(1000);   
-        
+    $(".okRegistro").show(1000);           
     setTimeout(() => {
         $(".okRegistro").hide(1000);
         resetarInputs();
-        iniciarRegistro();
-        
+        iniciarRegistro();        
     }, 5000);    
 }
-
+// ------------------------------- Retorna valores de inputs a valor inicial
 function resetarInputs() {
     capturaNombre.value = "";
     capturaApellido.value = "";
     capturaClave.value = "";
 }
-
-// Animaciones con show y hide para desplegar mensajes de error
-
+// ------------------------------- Animaciones con show y hide para desplegar mensajes de error (con jQuery)
 const registroDiv = $(".registro");
 const errorDeRegistro = registroDiv.append(`<p class="errorRegistro"> Debe completar todos los campos </p>`);
 const registroExitoso = registroDiv.append(`<p class="okRegistro"> ¡Registro Exitoso! </p>`); 
-
-// Mensajes fijos
-
-//const registroDiv = document.querySelector(".registro");
-
-//const errorDeRegistro = document.createElement("p");
-//errorDeRegistro.classList.add("errorRegistro");
-//errorDeRegistro.setAttribute("id", "registroFail");
-//errorDeRegistro.textContent = "Debe completar todos los campos"; 
-
-//const registroExitoso = document.createElement("p");
-//registroExitoso.classList.add("okRegistro");
-//registroExitoso.setAttribute("id", "registroSuccess");
-//registroExitoso.textContent = "¡Registro exitoso!"; 
-
-
-
 
