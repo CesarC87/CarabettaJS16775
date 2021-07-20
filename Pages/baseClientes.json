@@ -1,6 +1,6 @@
 
 
-{"baseClientes":[
+[
     { "nombre":"Jorge",  "apellido":"Perez" , "clave":"1234"},
     { "nombre":"Carla",  "apellido":"Santoro" , "clave":"6789"},
     { "nombre":"Juan",  "apellido":"Batman" , "clave":"5678"},
@@ -12,4 +12,4 @@
     { "nombre":"Gerardo",  "apellido":"Sofovich" , "clave":"2121"},
     { "nombre":"Anibal",  "apellido":"Troilo" , "clave":"2112"},
     { "nombre":"Carlos",  "apellido":"Memen" , "clave":"2525"}  
-  ]}
+  ]

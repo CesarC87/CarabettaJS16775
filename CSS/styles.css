@@ -231,6 +231,16 @@ h3 {
   cursor: not-allowed;
   opacity: 0.5; }
 
+.botonAPI {
+  width: max-content;
+  margin: 5% auto;
+  color: white;
+  background-color: #59f27f;
+  width: max-content;
+  padding: 2%;
+  border-radius: 20px;
+  font-family: 'Cabin', sans-serif; }
+
 /*EXTRACCIONES*/
 .extracciones {
   display: flex;
