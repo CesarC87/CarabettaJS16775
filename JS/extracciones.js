@@ -15,24 +15,29 @@ retiroDinero.value = "";
 
 function tipoBillete() {   // Función para chequear el tipo de billete a obtener
     if(retiroDinero.value % cambioDinero.value == 0){
-                        
+        switch (cambioDinero.value) {
+            case cambioDinero.value:                
                 retiroDiv.appendChild(retiroExitoso); 
                 retiroExitoso.textContent = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de ${cambioDinero.value}, gracias por utilizar nuestros servicios`;               
-           
-                            
+                break;            
+            default: 
+            alert("No ha ingresado un tipo de billete correcto");  
+            cambioDinero.value = "";
+            retiroDinero.value = "";
+            break;
+            }                
         }else {
-                           
+            if(retiroDinero.value % cambioDinero.value != 0) {                
                 retiroDiv.appendChild(errorRetiro);
                 tipoBillete();
         }    
         cambioDinero.value = "";
         retiroDinero.value = "";
     };             
-
-   
+   }
            
 function Retiro() {
-    e.preventDefault();
+    
     if((retiroDinero.value == "") || (retiroDinero.value < 100)){ //Si el monto a retirar no está ingresado o es menor a 100, mostrar error
         retiroDiv.appendChild(errorRetiro);        
     }
@@ -43,7 +48,8 @@ function Retiro() {
         if(retiroDinero.value % 100 != 0) {   // Si el monto ingresado NO es multiplo de 100, mostrar error y reiniciar campos        
             retiroDiv.appendChild(errorRetiro);
             Retiro();
-            
+            cambioDinero.value = "";
+            retiroDinero.value = "";
         }
     }    
 }
