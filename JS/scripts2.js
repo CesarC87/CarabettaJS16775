@@ -23,6 +23,7 @@ function getData() {
          }
         }
       }
+    document.querySelector(".tabla").classList.add("tablaON");  
   }
 
 const btnEnviar = $("#botonEnvioRegistro");
