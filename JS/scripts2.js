@@ -37,7 +37,7 @@ const capturaNombre = document.querySelector("#usuarioRegistro");
 const capturaApellido = document.querySelector("#apellidoRegistro");
 const capturaClave = document.querySelector("#claveRegistro");
 
-//-------------------------------- Expresiones Regulares
+//-------------------------------- Expresiones Regulares 
 
 const expresiones = {
     usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, //Letras, numeros, guion medio y bajo
@@ -48,66 +48,87 @@ const expresiones = {
 const formulario = document.getElementById("formulario");
 const inputs = document.querySelectorAll("input");
 
+//-------------------------------- Testeo de inputs
+
+let x = false;
+let y = false;
+let z = false;
+
 const validarFormulario = (e) => {
     switch (e.target.name) {
         case "Nombre":
             if(expresiones.nombre.test(e.target.value)){
-                document.getElementById("usuarioRegistro").classList.add("fieldOk");
-                document.getElementById("usuarioRegistro").classList.remove("fieldFail");
-                document.querySelector(`.registro__usuario i`).classList.add(`fa-check-circle`);                
+                capturaNombre.classList.add("fieldOk");
+                capturaNombre.classList.remove("fieldFail");
+                document.querySelector(`.registro__usuario i`).classList.add(`fa-check-circle`);    
+                x = true;            
             }
             else {
-                document.getElementById("usuarioRegistro").classList.remove("fieldOk");
-                document.getElementById("usuarioRegistro").classList.add("fieldFail");
-                document.querySelector(`.registro__usuario i`).classList.remove(`fa-check-circle`);              
+                capturaNombre.classList.remove("fieldOk");
+                capturaNombre.classList.add("fieldFail");
+                document.querySelector(`.registro__usuario i`).classList.remove(`fa-check-circle`);   
+                x = false           
             }
         break;
         case "Apellido":
             if(expresiones.apellido.test(e.target.value)){
-                document.getElementById("apellidoRegistro").classList.add("fieldOk");
-                document.getElementById("apellidoRegistro").classList.remove("fieldFail");
-                document.querySelector(`.registro__apellido i`).classList.add(`fa-check-circle`);                
+                capturaApellido.classList.add("fieldOk");
+                capturaApellido.classList.remove("fieldFail");
+                document.querySelector(`.registro__apellido i`).classList.add(`fa-check-circle`);       
+                y = true;         
             }
             else {
-                document.getElementById("apellidoRegistro").classList.remove("fieldOk");
-                document.getElementById("apellidoRegistro").classList.add("fieldFail");
-                document.querySelector(`.registro__apellido i`).classList.remove(`fa-check-circle`);                
+                capturaApellido.classList.remove("fieldOk");
+                capturaApellido.classList.add("fieldFail");
+                document.querySelector(`.registro__apellido i`).classList.remove(`fa-check-circle`);      
+                y = false                          
             }
         break;
         case "Clave":
             if(expresiones.contraseña.test(e.target.value)){
-                document.getElementById("claveRegistro").classList.add("fieldOk");
-                document.getElementById("claveRegistro").classList.remove("fieldFail");
+                capturaClave.classList.add("fieldOk");
+                capturaClave.classList.remove("fieldFail");
                 document.querySelector(`.registro__clave i`).classList.add(`fa-check-circle`);     
-                document.querySelector(`.registro p`).classList.remove(`registro__parrafo--mostrar`);          
+                document.querySelector(`.registro p`).classList.remove(`registro__parrafo--mostrar`);      
+                z = true;    
             }
             else {
-                document.getElementById("claveRegistro").classList.remove("fieldOk");
-                document.getElementById("claveRegistro").classList.add("fieldFail");
+                capturaClave.classList.remove("fieldOk");
+                capturaClave.classList.add("fieldFail");
                 document.querySelector(`.registro__clave i`).classList.remove(`fa-check-circle`);
-                document.querySelector(`.registro p`).classList.add(`registro__parrafo--mostrar`);                
+                document.querySelector(`.registro p`).classList.add(`registro__parrafo--mostrar`);   
+                z = false             
             }
         break;
     }
+    if(x == true && y == true  && z == true) {
+        console.log("Habilitar botón");
+        btnEnviar.disabled = false;
+        btnEnviar.removeClass("desabilitar-boton");
+        $(".errorRegistro").hide(1000); 
+    }
+    else {
+        $(".errorRegistro").show(1000);
+    }        
 }
 // ------------------------------- Chequea si hay teclas presionadas o si el usuario se va del campo
 inputs.forEach ((input) => {
     input.addEventListener(`keyup`, validarFormulario);
     input.addEventListener(`blur`, validarFormulario);
 });
-
 formulario.addEventListener("submit", (e) => {
     e.preventDefault();
 });
-
 //-------------------------------- Inicio de la funcion registro
 
 iniciarRegistro();
 
 // ------------------------------- Chequear si el usuario se sale del input
-capturaNombre.addEventListener("blur", validarUsuario);
+/*capturaNombre.addEventListener("blur", validarUsuario);
 capturaApellido.addEventListener("blur", validarUsuario);
-capturaClave.addEventListener("blur", validarUsuario);
+capturaClave.addEventListener("blur", validarUsuario);*/
+
+// ------------------------------- Funcion de registrar añadida al botón
 btnEnviar.on("click", registrarUsuario);
 // ------------------------------- Desabilita el boton enviar hasta que todos los campos se completen
 function iniciarRegistro() {
@@ -115,7 +136,7 @@ function iniciarRegistro() {
     btnEnviar.addClass("desabilitar-boton");
 }
 // ------------------------------- Chequea que los campos no esten vacíos
-function validarUsuario() {
+/*function validarUsuario() {
     console.log("Validando usuario");    
     if(capturaNombre.value !== "" && capturaApellido.value !== "" && capturaClave.value !== "") {
         console.log("Habilitar botón");
@@ -126,7 +147,7 @@ function validarUsuario() {
     else {
         $(".errorRegistro").show(1000);
     }        
-}
+}*/
 // ------------------------------- Crea Cliente
 function Cliente (nombre, apellido, clave){
     this.nombre = nombre;
@@ -135,18 +156,25 @@ function Cliente (nombre, apellido, clave){
 }
 // ------------------------------- Empuja al array de objetos "baseClientes", creando un cliente con los inputs del usuario
 function registrarUsuario() {
-    console.log("Registrando nuevo usuario");
-    let nuevoCliente;
-    nuevoCliente = new Cliente(capturaNombre.value, capturaApellido.value, capturaClave.value);
-    baseClientes.push(nuevoCliente);    
-    console.log(baseClientes);
-    $(".errorRegistro").hide(1000);        
-    $(".okRegistro").show(1000);           
-    setTimeout(() => {
-        $(".okRegistro").hide(1000);
-        resetarInputs();
-        iniciarRegistro();        
-    }, 5000);    
+    if(x == true && y == true  && z == true){
+        console.log("Registrando nuevo usuario");
+        let nuevoCliente;
+        nuevoCliente = new Cliente(capturaNombre.value, capturaApellido.value, capturaClave.value);
+        baseClientes.push(nuevoCliente);    
+        console.log(baseClientes);
+        $(".errorRegistro").hide(1000);        
+        $(".okRegistro").show(1000);           
+        setTimeout(() => {
+            $(".okRegistro").hide(1000);
+            resetarInputs();
+            iniciarRegistro();    
+            x = false;
+            y = false;
+            z = false;    
+        }, 4000);    
+    }else {
+        $(".errorRegistro").show(1000);
+    }
 }
 // ------------------------------- Retorna valores de inputs a valor inicial
 function resetarInputs() {
