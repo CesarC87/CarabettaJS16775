@@ -15,7 +15,6 @@ const baseClientes = [
 ];
 
 // ------------------------------- Animación H1 
-
 $(".h1Registro").animate({opacity:1},1300);
 
 $(".h1Registro").animate({opacity:0},1200, function(){    
@@ -101,7 +100,7 @@ const validarFormulario = (e) => {
             }
         break;
     }
-    if(x == true && y == true  && z == true) {
+    if(x == true && y == true  && z == true) {  // Si los 3 campos estan completos, habilita el botón de registro
         console.log("Habilitar botón");
         btnEnviar.disabled = false;
         btnEnviar.removeClass("desabilitar-boton");
@@ -123,31 +122,15 @@ formulario.addEventListener("submit", (e) => {
 
 iniciarRegistro();
 
-// ------------------------------- Chequear si el usuario se sale del input
-/*capturaNombre.addEventListener("blur", validarUsuario);
-capturaApellido.addEventListener("blur", validarUsuario);
-capturaClave.addEventListener("blur", validarUsuario);*/
-
 // ------------------------------- Funcion de registrar añadida al botón
+
 btnEnviar.on("click", registrarUsuario);
+
 // ------------------------------- Desabilita el boton enviar hasta que todos los campos se completen
 function iniciarRegistro() {
     btnEnviar.disabled = true;
     btnEnviar.addClass("desabilitar-boton");
 }
-// ------------------------------- Chequea que los campos no esten vacíos
-/*function validarUsuario() {
-    console.log("Validando usuario");    
-    if(capturaNombre.value !== "" && capturaApellido.value !== "" && capturaClave.value !== "") {
-        console.log("Habilitar botón");
-        btnEnviar.disabled = false;
-        btnEnviar.removeClass("desabilitar-boton");
-        $(".errorRegistro").hide(1000); 
-    }
-    else {
-        $(".errorRegistro").show(1000);
-    }        
-}*/
 // ------------------------------- Crea Cliente
 function Cliente (nombre, apellido, clave){
     this.nombre = nombre;

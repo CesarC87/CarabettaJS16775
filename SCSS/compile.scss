@@ -46,18 +46,24 @@ body .navbar {
 }
 
 .validacion {
-    display: flex;
-    flex-direction: column;
-    background-color: cadetblue;
-    border-radius: 5px;
-    padding: 2%;
-    justify-content: center;
-    width: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px;
+    grid-template-areas: "izq centro der"
+                          "izq2 centro2 der2";    
+    border-radius: 5px;    
+    justify-content: center;    
     margin: 0 auto;
+    position: relative;
     &__usuario {
         display: flex;
         margin: 5% auto 5%;
         flex-direction: row;
+        background-color: cadetblue;
+        height: fit-content;
+        grid-area: centro;
+        border-radius: 5px;
+        padding: 2%;
         &--label {
             padding: 4px;
         }
@@ -73,6 +79,11 @@ body .navbar {
     &__clave {
         display: flex;
         flex-direction: row;
+        background-color: cadetblue;
+        height: fit-content;
+        grid-area: centro2;
+        border-radius: 5px;
+        padding: 2%;
         &--input {
             margin: 0 0 0 9%;
         }
@@ -221,39 +232,41 @@ h3 {
     color: aliceblue;
     background-color: cadetblue;
     width: max-content;
-    margin: auto;
+    margin: 40% auto 0;
     border-radius: 5px;
     padding: 5px;
     font-family: 'Cabin', sans-serif;
+    grid-area: centro2;
+    height: fit-content;    
+    display: none;
     &:hover {
         color: darken($color: #e3e8f0, $amount: 21);
     }
-}
-
-#linkExtracciones {
-    margin: auto;
 }
 
 .errorRegistro {  /*Mensaje de error cuando el usuario no completa algun campo de los inputs*/
     color: white;
     background-color: rgb(242, 211, 89);
     width: max-content;
-    margin: 5% auto;
+    margin: 25% auto 0;
     padding: 2%;
     border-radius: 20px;
     font-family: 'Cabin', sans-serif;
     display: none;
+    grid-area: centro2;
 }
 
 .okRegistro {
     color: white;
     background-color: rgb(89, 242, 127);
     width: max-content;
-    margin: 5% auto;
+    margin: 25% auto 0;
     padding: 2%;
     border-radius: 20px;
     font-family: 'Cabin', sans-serif;
     display: none;
+    grid-area: centro2;
+    height: fit-content;    
 }
 
 .fieldOk {

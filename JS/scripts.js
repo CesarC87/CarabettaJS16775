@@ -33,24 +33,23 @@ botonValidacion.addEventListener("click", validacionUsuario);
      }
      if (detenerBucle) {
         validacionMensajeDiv.append(`<p class="okRegistro"> Bienvenido/a ${ingresoUsuario.value}! </p>`);
-        $(".errorRegistro").hide(1000);        
-        $(".okRegistro").show(700); 
-         validacionDiv.appendChild(linkExtracciones);
+        $(".errorRegistro").fadeOut(500);        
+        $(".okRegistro").fadeIn(1000); 
+         validacionMensajeDiv.append(linkExtracciones);
+         $(".linkExtracciones").fadeIn(2000);
               
      } else {
         validacionMensajeDiv.append(`<p class="errorRegistro"> Usuario o clave incorrecto </p>`);
-        $(".errorRegistro").show(700);        
-        $(".okRegistro").hide(1000);          
+        $(".errorRegistro").fadeIn(1000);        
+        $(".okRegistro").fadeOut(500);          
          break;
      }
   }
  }
 //--------------- Mensaje de error / éxito
- const validacionMensajeDiv = $(".bodyflex");
+ const validacionMensajeDiv = $(".validacion");
+
 //--------------- Si la validación es correcta, despliega enlace a sección "Extracciones"
-
-const validacionDiv = document.querySelector("#linkExtracciones");
-
 const linkExtracciones = document.createElement("a");
 linkExtracciones.classList.add("linkExtracciones");
 linkExtracciones.setAttribute("href", "./Pages/extracciones.html");
