@@ -35,8 +35,10 @@ botonValidacion.addEventListener("click", validacionUsuario);
         validacionMensajeDiv.append(`<p class="okRegistro"> Bienvenido/a ${ingresoUsuario.value}! </p>`);
         $(".errorRegistro").fadeOut(500);        
         $(".okRegistro").fadeIn(1000); 
-         validacionMensajeDiv.append(linkExtracciones);
-         $(".linkExtracciones").fadeIn(2000);
+         /*validacionMensajeDiv.append(linkExtracciones);
+         $(".linkExtracciones").fadeIn(2000);*/
+         document.querySelector(".navbarIndex").classList.add("navbar");
+         document.querySelector(".navbarIndex").classList.remove("navbarIndex");
               
      } else {
         validacionMensajeDiv.append(`<p class="errorRegistro"> Usuario o clave incorrecto </p>`);

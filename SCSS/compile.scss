@@ -35,9 +35,27 @@ body .navbar {
     }
 }
 
+body .navbarIndex {    
+    display: none;   
+}
+
+#navbarIndex {
+    margin: 2% auto 1%;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
 .bodyflex {
     display: flex;
     flex-direction: column;
+}
+.bodygrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "izq centro der"
+                          "izq2 centro2 der2"; 
 }
 .TablaDatos {
     text-align: center;
@@ -195,10 +213,11 @@ h1 {
     font-family: 'Cabin', sans-serif;
     opacity: 0;
 }
-.h1Registro {
+.h1Registro, .h1Operaciones {
     color: white;
     margin: 2% auto;
     font-family: 'Cabin', sans-serif;
+    grid-area: centro;
 }
 
 h3 {
