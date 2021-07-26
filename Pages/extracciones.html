@@ -30,8 +30,15 @@
             <input id = "montoRetiro" class="extracciones__montoRetiro--input" type="text">   
         </div>     
         <div class="extracciones__tipoRetiro">   
-            <label class="extracciones__tipoRetiro--label" for="tipoRetiro">Tipo de billete:</label>
-            <input id = "tipoRetiro" class="extracciones__tipoRetiro--input" type="text">  
+            <!--<label class="extracciones__tipoRetiro--label" for="tipoRetiro">Tipo de billete:</label>
+            <input id = "tipoRetiro" class="extracciones__tipoRetiro--input" type="text">  -->
+            <label for="tipoRetiro" class="tipoRetiroLabel">Tipo de billete:</label>
+            <select id="tipoRetiro" name="billete" form="extraccionesForm">
+            <option value="100">$100</option>
+            <option value="200">$200</option>
+            <option value="500">$500</option>
+            <option value="1000">$1000</option>
+            </select>
         </div> 
         
     </div>

@@ -325,9 +325,7 @@ h3 {
       width: 35%; }
   .extracciones__tipoRetiro {
     display: flex;
-    flex-direction: row;
-    align-self: center;
-    justify-content: center; }
+    justify-content: space-around; }
     .extracciones__tipoRetiro--label {
       padding: 0.7%;
       margin: 0 1% 0 0; }
@@ -335,6 +333,16 @@ h3 {
       height: 25px;
       width: 33%;
       margin: 0 0 3% 0; }
+
+#tipoRetiro {
+  height: 30px;
+  margin: 0 0 2% 0;
+  border-radius: 10px;
+  border: 1px solid cadetblue; }
+
+.tipoRetiroLabel {
+  padding: 0;
+  margin: 0 15% 0 0; }
 
 .botonesExtracciones {
   text-align: center; }

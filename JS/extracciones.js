@@ -9,7 +9,6 @@ errorRetiro.textContent = "Monto no ingresado o valor de billete incorrecto";
 const retiroExitoso = document.createElement("p");
 retiroExitoso.classList.add("okRetiro");
 retiroExitoso.setAttribute("id", "retiroSuccess");
-retiroExitoso.textContent = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de ${cambioDinero.value}, gracias por utilizar nuestros servicios`;       
 
 $("h1").animate({opacity: 1}, 1500, function(){    
     $("h3").slideDown(1200);
@@ -43,36 +42,40 @@ function checkMonto(){
 function checkBillete(){        
     switch(cambioDinero.value){            
         case "100":
+            retiroExitoso.innerText = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de $${cambioDinero.value} \n ¡Gracias por utilizar la red GlobalBank!`;     
             retiroDiv.appendChild(retiroExitoso);
             setTimeout(() => {
                 retiroDiv.removeChild(retiroExitoso);             
                 cambioDinero.value = "";
                 retiroDinero.value = "";                           
-            }, 2500);
+            }, 3000);
         break;
         case "200":
+            retiroExitoso.innerText = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de $${cambioDinero.value} \n ¡Gracias por utilizar la red GlobalBank!`;     
             retiroDiv.appendChild(retiroExitoso);
             setTimeout(() => {
                 retiroDiv.removeChild(retiroExitoso);             
                 cambioDinero.value = "";
                 retiroDinero.value = "";                           
-            }, 2500);
+            }, 3000);
         break;
         case "500":
+            retiroExitoso.innerText = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de $${cambioDinero.value} \n ¡Gracias por utilizar la red GlobalBank!`;     
             retiroDiv.appendChild(retiroExitoso);
             setTimeout(() => {
                 retiroDiv.removeChild(retiroExitoso);             
                 cambioDinero.value = "";
                 retiroDinero.value = "";                           
-            }, 2500);
+            }, 3000);
         break;
         case "1000":
+            retiroExitoso.innerText = `Usted recibirá ${retiroDinero.value/cambioDinero.value} billete/s de $${cambioDinero.value} \n ¡Gracias por utilizar la red GlobalBank!`;     
             retiroDiv.appendChild(retiroExitoso);
             setTimeout(() => {
                 retiroDiv.removeChild(retiroExitoso);             
                 cambioDinero.value = "";
                 retiroDinero.value = "";                           
-            }, 2500);
+            }, 3000);
         break;
         default:
         retiroDiv.appendChild(errorRetiro);
