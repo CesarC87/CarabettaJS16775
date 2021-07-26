@@ -3,7 +3,9 @@ let detenerBucle = false;
 let ingresoUsuario = document.getElementById("usuarioValidacion");
 let validarClave = document.getElementById("claveValidacion");
 let botonValidacion = document.getElementById("botonValidacion");
+let navbarIndex = document.querySelector(".navbarIndex");
 
+//--------------- Animación H1
 $("h1").animate({opacity: 1}, 1500);
 
 instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
@@ -16,7 +18,7 @@ const baseClientes = [
     {nombre: "Juan", apellido: "Batman", clave: 5678},
 ];      
 
-//--------------- Reseteo de campos y agregado de evento "Click" al botón
+//--------------- Campos en blanco por default y agregado de evento "Click" al botón
 
 ingresoUsuario.value = "";
 validarClave.value = "";
@@ -34,11 +36,9 @@ botonValidacion.addEventListener("click", validacionUsuario);
      if (detenerBucle) {
         validacionMensajeDiv.append(`<p class="okRegistro"> Bienvenido/a ${ingresoUsuario.value}! </p>`);
         $(".errorRegistro").fadeOut(500);        
-        $(".okRegistro").fadeIn(1000); 
-         /*validacionMensajeDiv.append(linkExtracciones);
-         $(".linkExtracciones").fadeIn(2000);*/
-         document.querySelector(".navbarIndex").classList.add("navbar");
-         document.querySelector(".navbarIndex").classList.remove("navbarIndex");
+        $(".okRegistro").fadeIn(1000);          
+         navbarIndex.classList.add("navbar");
+         navbarIndex.classList.remove("navbarIndex");
               
      } else {
         validacionMensajeDiv.append(`<p class="errorRegistro"> Usuario o clave incorrecto </p>`);
