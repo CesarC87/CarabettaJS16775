@@ -4,11 +4,14 @@ let ingresoUsuario = document.getElementById("usuarioValidacion");
 let validarClave = document.getElementById("claveValidacion");
 let botonValidacion = document.getElementById("botonValidacion");
 let navbarIndex = document.querySelector(".navbarIndex");
+let instrucciones = $("#instrucciones");
 
 //--------------- Animación H1
 $("h1").animate({opacity: 1}, 1500);
 
-instructivo = ["No compartas claves ni datos con otras personas", "Recordá cambiar tu clave cada 6 meses", "Si tenes dudas, sugerencias o reclamos, comunicate al 0810-999-qwerty"];
+instructivo = [`<p>No compartas claves ni datos con otras personas</p>`, 
+                `<p>Recordá cambiar tu clave cada 6 meses</p>`, 
+                `<p>Si tenes dudas, sugerencias o reclamos, comunicate al<br> 0810-999-qwerty</p>`];
 
 //--------------- Base Clientes para validar
 
@@ -39,6 +42,8 @@ botonValidacion.addEventListener("click", validacionUsuario);
         $(".okRegistro").fadeIn(1000);          
          navbarIndex.classList.add("navbar");
          navbarIndex.classList.remove("navbarIndex");
+         mostrarInstrucciones();
+         instrucciones.fadeIn(2500);
               
      } else {
         validacionMensajeDiv.append(`<p class="errorRegistro"> Usuario o clave incorrecto </p>`);
@@ -59,7 +64,7 @@ linkExtracciones.textContent = "Extracciones";
 
  function mostrarInstrucciones() {
     for (let i = 0; i < instructivo.length; i++) {
-    document.getElementById("instrucciones").innerHTML = instructivo[i];    
+    instrucciones.append(instructivo[i]);    
     }
 };
 

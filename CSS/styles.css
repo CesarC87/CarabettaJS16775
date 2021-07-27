@@ -1,3 +1,4 @@
+/*-----------------------------INDEX-----------------------------*/
 body {
   background-image: url(../Images/fondo.jpg);
   margin: 0; }
@@ -56,20 +57,21 @@ body .navbarIndex {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 100px;
-  grid-template-areas: "izq centro der" "izq2 centro2 der2";
+  grid-template-areas: "izq centro der" "izq2 centro2 der";
   border-radius: 5px;
-  justify-content: center;
+  justify-items: center;
   margin: 0 auto;
   position: relative; }
   .validacion__usuario {
     display: flex;
-    margin: 5% auto 5%;
     flex-direction: row;
     background-color: cadetblue;
     height: fit-content;
     grid-area: centro;
     border-radius: 5px;
-    padding: 2%; }
+    padding: 2%;
+    width: 90%;
+    align-self: center; }
     .validacion__usuario--label {
       padding: 4px; }
   .validacion__apellido {
@@ -85,13 +87,29 @@ body .navbarIndex {
     height: fit-content;
     grid-area: centro2;
     border-radius: 5px;
-    padding: 2%; }
+    padding: 2%;
+    width: 90%;
+    align-self: baseline; }
     .validacion__clave--input {
       margin: 0 0 0 9%; }
     .validacion__clave--label {
       padding: 1.5%; }
 
-/*REGISTRO*/
+#usuarioValidacion {
+  width: 30%;
+  margin: 0 0 0 3%; }
+
+#claveValidacion {
+  width: 28%;
+  margin: auto; }
+
+.instrucciones {
+  grid-area: der;
+  margin: 7% 0 0 0;
+  font-family: 'Cabin', sans-serif;
+  display: none; }
+
+/*-----------------------------REGISTRO-----------------------------*/
 .registro {
   display: flex;
   flex-direction: column;
@@ -162,9 +180,6 @@ label {
   padding: 3%;
   font-family: 'Cabin', sans-serif;
   font-size: 1.3rem; }
-
-#claveValidacion {
-  margin: 0 0 0 5.5%; }
 
 h1 {
   text-align: center;
@@ -246,7 +261,8 @@ h3 {
   font-family: 'Cabin', sans-serif;
   display: none;
   grid-area: centro2;
-  height: fit-content; }
+  height: fit-content;
+  font-size: 1.3em; }
 
 .fieldOk {
   border-color: #19f819; }
@@ -307,7 +323,7 @@ h3 {
   color: white;
   opacity: 1; }
 
-/*EXTRACCIONES*/
+/*-----------------------------EXTRACCIONES-----------------------------*/
 .extracciones {
   display: flex;
   flex-direction: column;

@@ -1,3 +1,5 @@
+
+/*-----------------------------INDEX-----------------------------*/
 body {
     background-image: url(../Images/fondo.jpg);
     margin: 0;
@@ -68,20 +70,21 @@ body .navbarIndex {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100px;
     grid-template-areas: "izq centro der"
-                          "izq2 centro2 der2";    
+                          "izq2 centro2 der";    
     border-radius: 5px;    
-    justify-content: center;    
+    justify-items: center;    
     margin: 0 auto;
     position: relative;
     &__usuario {
-        display: flex;
-        margin: 5% auto 5%;
+        display: flex;        
         flex-direction: row;
         background-color: cadetblue;
         height: fit-content;
         grid-area: centro;
         border-radius: 5px;
         padding: 2%;
+        width: 90%;
+        align-self: center;
         &--label {
             padding: 4px;
         }
@@ -101,7 +104,9 @@ body .navbarIndex {
         height: fit-content;
         grid-area: centro2;
         border-radius: 5px;
-        padding: 2%;
+        padding: 2%; 
+        width: 90%;       
+        align-self: baseline;
         &--input {
             margin: 0 0 0 9%;
         }
@@ -110,8 +115,22 @@ body .navbarIndex {
         }
     }
 }
+#usuarioValidacion {
+    width: 30%;
+    margin: 0 0 0 3%;
+}
+#claveValidacion {
+    width: 28%;
+    margin: auto;
+}
+.instrucciones {
+    grid-area: der;
+    margin: 7% 0 0 0;
+    font-family: 'Cabin', sans-serif;
+    display: none;
+}
 
-                                            /*REGISTRO*/
+/*-----------------------------REGISTRO-----------------------------*/
 
 .registro {
     display: flex;
@@ -198,13 +217,10 @@ label {
     font-family: 'Cabin', sans-serif;
     font-size: 1.3rem;
 }
-#claveValidacion {
-    margin: 0 0 0 5.5%;
-}
+
 h1 {
     text-align: center;
-    background-color: #104146;
-    //width: max-content;
+    background-color: #104146;    
     border-radius: 10px;
     padding: 1%;
     color: #ffffff;
@@ -285,7 +301,8 @@ h3 {
     font-family: 'Cabin', sans-serif;
     display: none;
     grid-area: centro2;
-    height: fit-content;    
+    height: fit-content;   
+    font-size: 1.3em; 
 }
 
 .fieldOk {
@@ -351,8 +368,7 @@ h3 {
     opacity: 1;
     
 }
-  /*EXTRACCIONES*/
-
+  /*-----------------------------EXTRACCIONES-----------------------------*/
 
 .extracciones {
     display: flex;
