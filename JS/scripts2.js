@@ -138,7 +138,8 @@ function Cliente(nombre, apellido, clave) {
     this.apellido = apellido;
     this.clave = clave;
 }
-// ------------------------------- Empuja al array de objetos "baseClientes" y al localStorage, creando un cliente con los inputs del usuario
+// ------------------------------- Empuja al array de objetos "baseClientes" y al localStorage, 
+// ------------------------------- creando un cliente con los inputs del usuario
 function registrarUsuario() {
     if (x == true && y == true && z == true) {        
         let nuevoCliente;

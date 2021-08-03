@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Benne&family=Cabin:wght@600&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -18,9 +19,27 @@
             <a href="#">Contacto</a>
         </nav>
     </header>
-    <div class="bodygrid">
+    <div class="bodygridOperaciones">
         <h1 class="h1Operaciones">Bienvenido a la red GlobalBank</h1> 
+    <div class="compraDolares">
+        <h3 class="h3dolares">Compra y venta de dolares</h3>
+        <table id="tablaDolar" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Compra</th>
+                    <th>Venta</th>
+                </tr>
+            </thead>
+            <tbody id="tablaDolarJSON">
+    
+            </tbody>
+        </table>
         
+    </div>
+    <div class="plazoFijo">
+        <h3 class="h3plazoFijo">Hacer un plazo fijo</h3>
+    </div>
 
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

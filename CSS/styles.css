@@ -306,7 +306,7 @@ h3 {
 .tabla {
   display: none; }
 
-.bodyflex .table {
+.bodyflex .table, .compraDolares .table {
   width: 100%;
   max-width: max-content;
   margin-bottom: 1rem;
@@ -390,3 +390,32 @@ h3 {
   padding: 1%;
   border-radius: 10px;
   font-family: 'Cabin', sans-serif; }
+
+/*-----------------------------OPERACIONES-----------------------------*/
+.bodygridOperaciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "izq1 centro1 der1" "izq2 centro2 der2"; }
+
+.h1Operaciones {
+  width: fit-content;
+  height: fit-content;
+  grid-area: centro1; }
+
+.compraDolares {
+  grid-area: izq2;
+  text-align: center; }
+  .compraDolares h3 {
+    display: block;
+    margin: 6% auto 6%; }
+  .compraDolares table {
+    margin: 0 0 0 10%; }
+
+.plazoFijo {
+  grid-area: der2;
+  text-align: left;
+  display: block;
+  margin: 6% auto 6%; }
+  .plazoFijo h3 {
+    display: block; }
