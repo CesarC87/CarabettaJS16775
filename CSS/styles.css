@@ -401,7 +401,8 @@ h3 {
 .h1Operaciones {
   width: fit-content;
   height: fit-content;
-  grid-area: centro1; }
+  grid-area: centro1;
+  opacity: 1; }
 
 .compraDolares {
   grid-area: izq2;
