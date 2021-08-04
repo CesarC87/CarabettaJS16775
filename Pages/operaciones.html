@@ -21,25 +21,46 @@
     </header>
     <div class="bodygridOperaciones">
         <h1 class="h1Operaciones">Bienvenido a la red GlobalBank</h1> 
-    <div class="compraDolares">
-        <h3 class="h3dolares">Compra y venta de dolares</h3>
-        <table id="tablaDolar" class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Tipo</th>
-                    <th>Compra</th>
-                    <th>Venta</th>
-                </tr>
-            </thead>
-            <tbody id="tablaDolarJSON">
-    
-            </tbody>
-        </table>
+        <div class="compraDolares">
+            <h3 class="h3dolares">Compra y venta de dolares</h3>
+            <table id="tablaDolar" class="table table-hover">
+                <thead>
+                    <tr>
+                      <th>Tipo</th>
+                      <th>Compra</th>
+                      <th>Venta</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaDolarJSON">
+                    <!--Acá se agrega la cotización dolar de la API-->
+                </tbody>
+            </table>
         
-    </div>
-    <div class="plazoFijo">
-        <h3 class="h3plazoFijo">Hacer un plazo fijo</h3>
-    </div>
+        </div>
+        <div class="plazoFijoDer">          
+          <h3 class="plazoFijo__h3">Hacer un plazo fijo</h3>     
+            <div class="plazoFijo">       
+              <div class="plazoFijo__monto">
+                <label class="plazoFijo__monto--label" for="plazoFijoMonto">Monto a depositar</label>
+                <input id="plazoFijoMonto" class="plazoFijo__monto--input" type="number" min="1000" step="1000">   
+              </div>     
+              <div class="plazoFijo__plazo">               
+                <label for="plazoFijo__plazo" class="plazoFijo__plazo--label">Días:</label>
+                <select id="plazoFijo__plazo" name="plazo">
+                    <option value="30">30</option>
+                    <option value="60">60</option>
+                    <option value="90">90</option>
+                    <option value="360">360</option>
+                </select>
+              </div>      
+              <div class="plazoFijo__interes">
+                  <label for="plazoFijo__interes" class="plazoFijo__interes--label">Monto final en cuenta:</label>
+                  <input id="plazoFijo__interes" class="plazoFijo__interes--input" readonly="true">
+              </div>
+          </div>
+            
+        </div>
+
 
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

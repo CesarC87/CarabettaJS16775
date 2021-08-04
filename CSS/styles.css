@@ -350,7 +350,7 @@ h3 {
       width: 33%;
       margin: 0 0 3% 0; }
 
-#tipoRetiro {
+#tipoRetiro, #plazoFijo__plazo {
   height: 30px;
   margin: 0 0 2% 0;
   border-radius: 10px;
@@ -413,10 +413,27 @@ h3 {
   .compraDolares table {
     margin: 0 0 0 10%; }
 
-.plazoFijo {
+.plazoFijoDer {
   grid-area: der2;
   text-align: left;
   display: block;
   margin: 6% auto 6%; }
-  .plazoFijo h3 {
+  .plazoFijoDer h3 {
     display: block; }
+
+.plazoFijo {
+  background-color: cadetblue; }
+  .plazoFijo__monto--label {
+    margin: 1% 0 0 27%;
+    padding: 1%; }
+  .plazoFijo__monto--input {
+    width: auto;
+    margin: 0 0 0 22%; }
+  .plazoFijo__plazo--label {
+    margin: 0 0 0 30%; }
+  .plazoFijo__interes--input {
+    width: auto;
+    margin: 0 0 4% 22%; }
+  .plazoFijo__interes--label {
+    margin: 1% 0 0 25%;
+    padding: 1%; }

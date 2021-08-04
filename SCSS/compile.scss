@@ -404,7 +404,7 @@ h3 {
     }
 }
 
-#tipoRetiro {
+#tipoRetiro, #plazoFijo__plazo {
     height: 30px;
     margin: 0 0 2% 0;
     border-radius: 10px;
@@ -476,7 +476,7 @@ h3 {
         margin: 0 0 0 10%;
     }
 }
-.plazoFijo {
+.plazoFijoDer {
     grid-area: der2;
     text-align: left;
     display: block;
@@ -484,4 +484,26 @@ h3 {
     h3 {
         display: block;
     }    
+}
+.plazoFijo {
+    background-color: cadetblue;
+    &__monto--label {
+        margin: 1% 0 0 27%;
+        padding: 1%;
+    }
+    &__monto--input {
+        width: auto;
+        margin: 0 0 0 22%;
+    }
+    &__plazo--label {
+        margin: 0 0 0 30%;
+    }
+    &__interes--input {
+        width: auto;
+        margin: 0 0 4% 22%;
+    }
+    &__interes--label {
+        margin: 1% 0 0 25%;
+        padding: 1%;
+    }
 }
