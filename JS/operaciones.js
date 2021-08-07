@@ -30,3 +30,35 @@ $(".h1Operaciones").animate({opacity:0},1200, function(){
           }                
       }
       getData();
+
+document.querySelector("#plazoFijo__boton--calculo").addEventListener("click", calcular);
+let tasaValor = document.querySelector("#plazoFijo__plazo");
+let tasa30 = 0.37 / 12;
+let tasa60 = 0.39 / 6;
+let tasa90 = 0.42 / 4;
+let tasa360 = 0.47 / 1;
+function checkTasa() {
+        switch(tasaValor.value){
+            case "30":
+                tasa = tasa30;
+              break;
+            case "60":
+                tasa = tasa60;
+              break;
+            case "90":
+                tasa = tasa90;
+              break;
+            case "360":
+                tasa = tasa360;
+              break;
+            default:
+                tasa = tasa30;
+              break;    
+    }
+};
+function calcular() {
+    checkTasa()
+    let montoInicial = document.querySelector("#plazoFijoMonto");      
+    let montoFinal = Number(montoInicial.value) + (Number(montoInicial.value) * Number(tasa));
+    document.querySelector("#plazoFijo__interes").value = `$${parseInt(montoFinal)}`;
+}

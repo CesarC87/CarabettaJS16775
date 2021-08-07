@@ -16,13 +16,13 @@
             <a href="../Pages/extracciones.html">Extracciones</a>
             <a href="../Pages/clientes.html">Clientes</a>
             <a href="../Pages/operaciones.html">Operaciones<i class="fas fa-chart-line"></i></a>
-            <a href="#">Contacto</a>
+            <a href="../Pages/cuenta.html">Mi cuenta</a>
         </nav>
     </header>
     <div class="bodygridOperaciones">
         <h1 class="h1Operaciones">Bienvenido a la red GlobalBank</h1> 
-        <div class="compraDolares">
-            <h3 class="h3dolares">Compra y venta de dolares</h3>
+        <div class="cotizacion">                                        <!--Seccíon Cotización-->
+            <h3 class="h3cotizacion">Cotizaciones</h3>
             <table id="tablaDolar" class="table table-hover">
                 <thead>
                     <tr>
@@ -34,15 +34,14 @@
                 <tbody id="tablaDolarJSON">
                     <!--Acá se agrega la cotización dolar de la API-->
                 </tbody>
-            </table>
-        
+            </table>        
         </div>
-        <div class="plazoFijoDer">          
+        <div class="plazoFijoDer">                                      <!--Seccíon Plazo Fijo-->
           <h3 class="plazoFijo__h3">Hacer un plazo fijo</h3>     
             <div class="plazoFijo">       
               <div class="plazoFijo__monto">
                 <label class="plazoFijo__monto--label" for="plazoFijoMonto">Monto a depositar</label>
-                <input id="plazoFijoMonto" class="plazoFijo__monto--input" type="number" min="1000" step="1000">   
+                <input id="plazoFijoMonto" class="plazoFijo__monto--input" type="number" min="1000" step="1000" value="">   
               </div>     
               <div class="plazoFijo__plazo">               
                 <label for="plazoFijo__plazo" class="plazoFijo__plazo--label">Días:</label>
@@ -53,12 +52,37 @@
                     <option value="360">360</option>
                 </select>
               </div>      
+              <div class="tasas">
+                  <ul>
+                    <li>30 días: 37% anual</li>
+                    <li>60 días: 39% anual</li>
+                    <li>90 días: 42% anual</li>
+                    <li>360 días: 47% anual</li>
+                  </ul>
+              </div>
               <div class="plazoFijo__interes">
                   <label for="plazoFijo__interes" class="plazoFijo__interes--label">Monto final en cuenta:</label>
                   <input id="plazoFijo__interes" class="plazoFijo__interes--input" readonly="true">
               </div>
+              <div class="plazoFijo__boton">
+                  <button id="plazoFijo__boton--calculo">Calcular</button>
+              </div>
           </div>
             
+        </div>
+        <div class="compraDolaresIzq">
+            <h3 class="h3dolares">Compra y venta de dolares</h3>
+          <div class="compraDolares">
+            <div class="compraDolares__monto">
+                <label class="compraDolares__monto--label" for="compraDolaresMonto">Cantidad de dolares</label>
+                <input id="compraDolaresMonto" class="compraDolares__monto--input" type="number" min="10" max ="200" step="10" value=""> 
+            </div>
+            <div class="compraDolares__costo">
+                <label for="compraDolares__costo" class="compraDolares__costo--label">Total en pesos argentinos:</label>
+                <input id="compraDolares__costo" class="compraDolares__costo--input" readonly="true">
+            </div>
+            <button class="btnCompraUSD">Comprar</button>
+          </div>
         </div>
 
 

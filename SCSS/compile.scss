@@ -188,7 +188,7 @@ body .navbarIndex {
     border-radius: 20px;
     font-family: 'Cabin', sans-serif;
 }
-#botonValidacion, #botonRegistro, #botonEnvioRegistro, #botonRetiro {
+#botonValidacion, #botonRegistro, #botonEnvioRegistro, #botonRetiro, #plazoFijo__boton--calculo, .btnCompraUSD {
     margin: 3% auto 0;
     width: max-content;
     font-size: 1.2rem;
@@ -295,14 +295,14 @@ h3 {
     color: white;
     background-color: rgb(89, 242, 127);
     width: max-content;
-    margin: 25% auto 0;
+    margin: 20% auto 0;
     padding: 2%;
     border-radius: 20px;
     font-family: 'Cabin', sans-serif;
     display: none;
-    grid-area: centro2;
+    grid-area: centro;
     height: fit-content;   
-    font-size: 1.3em; 
+    font-size: 1.5em; 
 }
 
 .fieldOk {
@@ -350,7 +350,7 @@ h3 {
 .tabla {    
     display: none;
 }
-.bodyflex .table, .compraDolares .table {
+.bodyflex .table, .cotizacion .table {
     width: 100%;
     max-width: max-content;
     margin-bottom: 1rem;
@@ -365,8 +365,7 @@ h3 {
     flex-direction: column;    
     align-self: center;
     color: white;
-    opacity: 1;
-    
+    opacity: 1;    
 }
   /*-----------------------------EXTRACCIONES-----------------------------*/
 
@@ -454,7 +453,7 @@ h3 {
 
 .bodygridOperaciones {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 0.8fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: "izq1 centro1 der1"
                          "izq2 centro2 der2";
@@ -465,16 +464,14 @@ h3 {
     grid-area: centro1;
     opacity: 1;
 }
-.compraDolares {
-    grid-area: izq2;    
+.cotizacion {
+    grid-area: centro2;    
     text-align: center;
+    justify-self: center;
     h3 {
         display: block;
         margin: 6% auto 6%;
     }    
-    table {
-        margin: 0 0 0 10%;
-    }
 }
 .plazoFijoDer {
     grid-area: der2;
@@ -487,6 +484,7 @@ h3 {
 }
 .plazoFijo {
     background-color: cadetblue;
+    border-radius: 15px;
     &__monto--label {
         margin: 1% 0 0 27%;
         padding: 1%;
@@ -505,5 +503,57 @@ h3 {
     &__interes--label {
         margin: 1% 0 0 25%;
         padding: 1%;
+    }    
+}
+
+.plazoFijoDer {
+    & h3 {
+        text-align: center;        
     }
+}
+
+#plazoFijo__boton--calculo, .btnCompraUSD {
+    margin: 0 0 2% 36%;    
+    outline:none;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+.compraDolaresIzq {
+    grid-area: izq2;
+    margin: 1% 4% 6%;
+    & h3 {
+        display: block;
+        text-align: center;
+        margin: 4% auto 4%;
+    }
+}
+.compraDolares {    
+    background-color: cadetblue;
+    border-radius: 15px;
+    &__monto {
+        display: flex;
+        flex-direction: column;
+    }
+    &__costo--input {
+        width: 200px;
+        margin: 0 0 0 25%;
+    }
+}
+
+#tablaDolar {
+    border-radius: 10px;
+    & thead {
+        border-top-style: hidden;
+    }
+}
+
+.tasas ul {
+    color: white;
+    font-family: 'Cabin';   
+    background-color: #2f8e62;
+    width: max-content;
+    padding: 2% 3% 2% 6%;
+    border-radius: 10px;
+    margin: auto;
 }

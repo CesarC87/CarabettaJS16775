@@ -6,6 +6,8 @@ let botonValidacion = document.getElementById("botonValidacion");
 let navbarIndex = document.querySelector(".navbarIndex");
 let instrucciones = $("#instrucciones");
 let botones = $(".botones");
+let campoUsuario = $(".validacion__usuario");
+let campoClave = $(".validacion__clave");
 
 //--------------- Animación H1
 $("h1").animate({opacity: 1}, 1500);
@@ -46,6 +48,8 @@ botonValidacion.addEventListener("click", validacionUsuario);
          mostrarInstrucciones();
          instrucciones.fadeIn(2500);
          $(".botones").fadeOut(1000);
+         campoUsuario.fadeOut(1000);
+         campoClave.fadeOut(1000);
               
      } else {
         validacionMensajeDiv.append(`<p class="errorRegistro"> Usuario o clave incorrecto </p>`);
