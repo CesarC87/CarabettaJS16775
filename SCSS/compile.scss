@@ -116,12 +116,12 @@ body .navbarIndex {
     }
 }
 #usuarioValidacion {
-    width: 30%;
-    margin: 0 0 0 3%;
+    width: 28%;
+    margin: auto;
 }
 #claveValidacion {
     width: 28%;
-    margin: auto;
+    margin: auto auto auto 7.5%;
 }
 .instrucciones {
     grid-area: der;
@@ -294,8 +294,7 @@ h3 {
 .okRegistro {
     color: white;
     background-color: rgb(89, 242, 127);
-    width: max-content;
-    margin: 20% auto 0;
+    width: max-content;    
     padding: 2%;
     border-radius: 20px;
     font-family: 'Cabin', sans-serif;
@@ -303,6 +302,8 @@ h3 {
     grid-area: centro;
     height: fit-content;   
     font-size: 1.5em; 
+    align-self: flex-end;
+    margin: 15% auto 0;
 }
 
 .fieldOk {
@@ -511,9 +512,12 @@ h3 {
         text-align: center;        
     }
 }
+.plazoFijo__boton {
+    text-align: center;
+}
 
-#plazoFijo__boton--calculo, .btnCompraUSD {
-    margin: 0 0 2% 36%;    
+#plazoFijo__boton--calculo, .btnCompraUSD {       
+    margin: 3%;
     outline:none;
     &:hover {
         opacity: 0.7;
@@ -531,13 +535,26 @@ h3 {
 .compraDolares {    
     background-color: cadetblue;
     border-radius: 15px;
+    text-align: center;
     &__monto {
         display: flex;
         flex-direction: column;
+        &--input {
+            width: 40%;
+        }
+        &--label {
+            text-align: center;
+        }
     }
-    &__costo--input {
-        width: 200px;
-        margin: 0 0 0 25%;
+    &__costo {
+        display: flex;
+        flex-direction: column;
+        &--input {
+            width: 40%;
+        }
+        &--label {
+            text-align: center;
+        }
     }
 }
 
@@ -556,4 +573,17 @@ h3 {
     padding: 2% 3% 2% 6%;
     border-radius: 10px;
     margin: auto;
+}
+.linkExtr {
+    grid-area: izq2;
+    align-self: end;
+    justify-self: center;
+    & button {
+        margin-bottom: 100%;
+        font-size: 1.6rem;
+        & a {
+            color: white;
+            text-decoration-line: none;
+        }
+    }
 }

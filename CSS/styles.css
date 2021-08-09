@@ -96,12 +96,12 @@ body .navbarIndex {
       padding: 1.5%; }
 
 #usuarioValidacion {
-  width: 30%;
-  margin: 0 0 0 3%; }
+  width: 28%;
+  margin: auto; }
 
 #claveValidacion {
   width: 28%;
-  margin: auto; }
+  margin: auto auto auto 7.5%; }
 
 .instrucciones {
   grid-area: der;
@@ -255,14 +255,15 @@ h3 {
   color: white;
   background-color: #59f27f;
   width: max-content;
-  margin: 20% auto 0;
   padding: 2%;
   border-radius: 20px;
   font-family: 'Cabin', sans-serif;
   display: none;
   grid-area: centro;
   height: fit-content;
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  align-self: flex-end;
+  margin: 15% auto 0; }
 
 .fieldOk {
   border-color: #19f819; }
@@ -441,8 +442,11 @@ h3 {
 .plazoFijoDer h3 {
   text-align: center; }
 
+.plazoFijo__boton {
+  text-align: center; }
+
 #plazoFijo__boton--calculo, .btnCompraUSD {
-  margin: 0 0 2% 36%;
+  margin: 3%;
   outline: none; }
   #plazoFijo__boton--calculo:hover, .btnCompraUSD:hover {
     opacity: 0.7; }
@@ -457,13 +461,22 @@ h3 {
 
 .compraDolares {
   background-color: cadetblue;
-  border-radius: 15px; }
+  border-radius: 15px;
+  text-align: center; }
   .compraDolares__monto {
     display: flex;
     flex-direction: column; }
-  .compraDolares__costo--input {
-    width: 200px;
-    margin: 0 0 0 25%; }
+    .compraDolares__monto--input {
+      width: 40%; }
+    .compraDolares__monto--label {
+      text-align: center; }
+  .compraDolares__costo {
+    display: flex;
+    flex-direction: column; }
+    .compraDolares__costo--input {
+      width: 40%; }
+    .compraDolares__costo--label {
+      text-align: center; }
 
 #tablaDolar {
   border-radius: 10px; }
@@ -478,3 +491,14 @@ h3 {
   padding: 2% 3% 2% 6%;
   border-radius: 10px;
   margin: auto; }
+
+.linkExtr {
+  grid-area: izq2;
+  align-self: end;
+  justify-self: center; }
+  .linkExtr button {
+    margin-bottom: 100%;
+    font-size: 1.6rem; }
+    .linkExtr button a {
+      color: white;
+      text-decoration-line: none; }

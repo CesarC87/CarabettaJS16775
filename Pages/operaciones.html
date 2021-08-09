@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="../Pages/extracciones.html">Extracciones</a>
+            <a href="../index.html">Home</a>
             <a href="../Pages/clientes.html">Clientes</a>
             <a href="../Pages/operaciones.html">Operaciones<i class="fas fa-chart-line"></i></a>
             <a href="../Pages/cuenta.html">Mi cuenta</a>
@@ -73,16 +73,20 @@
         <div class="compraDolaresIzq">
             <h3 class="h3dolares">Compra y venta de dolares</h3>
           <div class="compraDolares">
-            <div class="compraDolares__monto">
+             <div class="compraDolares__monto">
                 <label class="compraDolares__monto--label" for="compraDolaresMonto">Cantidad de dolares</label>
                 <input id="compraDolaresMonto" class="compraDolares__monto--input" type="number" min="10" max ="200" step="10" value=""> 
-            </div>
-            <div class="compraDolares__costo">
-                <label for="compraDolares__costo" class="compraDolares__costo--label">Total en pesos argentinos:</label>
-                <input id="compraDolares__costo" class="compraDolares__costo--input" readonly="true">
-            </div>
-            <button class="btnCompraUSD">Comprar</button>
-          </div>
+             </div>
+             <div class="compraDolares__costo">
+                <label for="compraDolaresCosto" class="compraDolares__costo--label">Total en pesos argentinos:<br>(Incluye Imp. PAIS + Percepcion RG 4815)</label>
+                <input id="compraDolaresCosto" class="compraDolares__costo--input" readonly="true">
+             </div>
+             <button class="btnCompraUSD" id="calcularDolar">Calcular</button>
+             <button class="btnCompraUSD" id="comprarDolar">Comprar</button>
+          </div>          
+        </div>
+        <div class="linkExtr">
+            <button class="btnCompraUSD" id="linkExtracciones"><a href="extracciones.html">Extracciones</a></button>
         </div>
 
 
