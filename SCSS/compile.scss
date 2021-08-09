@@ -188,7 +188,7 @@ body .navbarIndex {
     border-radius: 20px;
     font-family: 'Cabin', sans-serif;
 }
-#botonValidacion, #botonRegistro, #botonEnvioRegistro, #botonRetiro, #plazoFijo__boton--calculo, .btnCompraUSD {
+#botonValidacion, #botonRegistro, #botonEnvioRegistro, #botonRetiro, #plazoFijo__boton--calculo, .btnCompraUSD, .btnCuentas {
     margin: 3% auto 0;
     width: max-content;
     font-size: 1.2rem;
@@ -229,7 +229,7 @@ h1 {
     font-family: 'Cabin', sans-serif;
     opacity: 0;
 }
-.h1Registro, .h1Operaciones {
+.h1Registro, .h1Operaciones, .h1Cuenta, .h1Clientes {
     color: white;
     margin: 2% auto;
     font-family: 'Cabin', sans-serif;
@@ -459,8 +459,8 @@ h3 {
     grid-template-areas: "izq1 centro1 der1"
                          "izq2 centro2 der2";
 }
-.h1Operaciones {
-    width: fit-content;
+.h1Operaciones, .h1Cuenta, .h1Clientes {
+    width: max-content;
     height: fit-content;
     grid-area: centro1;
     opacity: 1;
@@ -478,7 +478,7 @@ h3 {
     grid-area: der2;
     text-align: left;
     display: block;
-    margin: 6% auto 6%;
+    margin: 6% auto 6%;    
     h3 {
         display: block;
     }    
@@ -586,4 +586,22 @@ h3 {
             text-decoration-line: none;
         }
     }
+}
+/*-----------------------------CUENTAS-----------------------------*/
+
+.cuentas {
+    display: flex;
+    flex-direction: column;
+    &__label {
+        text-align: center;
+    }
+    &__input {
+        width: auto;
+    }
+    &__display {
+        width: auto;
+    }
+}
+.display__label {
+    text-align: center;
 }

@@ -1,3 +1,12 @@
+// ------------------------------- Animación H1 
+
+$(".h1Clientes").animate({opacity:1},1300);
+
+$(".h1Clientes").animate({opacity:0},1200, function(){    
+        $(".h1Clientes").text("Clientes");
+        $(".h1Clientes").animate({opacity:1},2000);        
+    }); 
+
 document.querySelector("#clickAPI").addEventListener("click", getData)
 
 function getData() {
