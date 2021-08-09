@@ -587,6 +587,7 @@ h3 {
         }
     }
 }
+
 /*-----------------------------CUENTAS-----------------------------*/
 
 .cuentas {
@@ -604,4 +605,16 @@ h3 {
 }
 .display__label {
     text-align: center;
+}
+#okCompra, #okPlazo {
+    color: white;
+    background-color: rgb(89, 242, 127);
+    width: max-content;    
+    padding: 2%;
+    border-radius: 20px;
+    font-family: 'Cabin', sans-serif;
+    display: none;    
+    height: fit-content;   
+    font-size: 1.3em;     
+    margin: auto;
 }

@@ -516,3 +516,15 @@ h3 {
 
 .display__label {
   text-align: center; }
+
+#okCompra, #okPlazo {
+  color: white;
+  background-color: #59f27f;
+  width: max-content;
+  padding: 2%;
+  border-radius: 20px;
+  font-family: 'Cabin', sans-serif;
+  display: none;
+  height: fit-content;
+  font-size: 1.3em;
+  margin: auto; }

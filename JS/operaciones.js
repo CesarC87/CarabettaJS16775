@@ -12,6 +12,9 @@ let cantidadDolares = document.querySelector("#compraDolaresMonto");
 let costoDolares = document.querySelector("#compraDolaresCosto");
 cantidadDolares.value = "";
 costoDolares.value = "";
+// ------------------------------- Const
+const btnCompra = $("#comprarDolar");
+const btnPlazo = $("#plazoFijo__boton--confirma");
 // ------------------------------- Datos de cotización dolar a través de API 
     function getData() {
         const xhttp = new XMLHttpRequest();    
@@ -84,5 +87,44 @@ function calcularPlazo() {
     let interes = Number(montoInicial.value) + (Number(montoInicial.value) * Number(tasa));
     montoFinal.value = `$${parseInt(interes)}`;
 }
+function resetearInputsDolar() {
+    cantidadDolares.value = "";
+    costoDolares.value = "";
+}
+function compraExitosa () {    
+    if (cantidadDolares.value != "") {  
+        console.log("Habilitar botón");
+        btnCompra.disabled = false;          
+        $("#okCompra").fadeIn(1300);    
+        setTimeout(() => {
+        $("#okCompra").fadeOut(1000);
+        resetearInputsDolar();        
+    }, 3000);
+    }
+    
+}
+btnCompra.on("click", compraExitosa);
+
+function resetearInputsPlazo() {
+    montoInicial.value = "";
+    montoFinal.value = "";
+}
+function plazoFijoExitoso () {   
+    if (montoInicial.value != "") {
+    $("#okPlazo").fadeIn(1300);    
+    setTimeout(() => {
+        $("#okPlazo").fadeOut(1000);
+        resetearInputsPlazo();        
+    }, 3000);
+    }
+}
+btnPlazo.on("click", plazoFijoExitoso);
+
+
+function disableButtons() {
+    btnPlazo.disabled = true;    
+    btnCompra.disabled = true;    
+}
+disableButtons();
 
 
